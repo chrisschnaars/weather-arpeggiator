@@ -1,0 +1,13 @@
+.container {
+  @include padding;
+  width: 100%;
+}
+
+.container__inner-container {
+  width: 100%;
+}
+
+.container__inner-container--split {
+  display: flex;
+  justify-content: space-between;
+}
