@@ -19,7 +19,7 @@ const sass = require('gulp-sass');
 // Scripts
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
-const jshint = require('gulp-jshint');
+const eslint = require('gulp-eslint');
 const stylish = require('jshint-stylish');
 const uglify = require('gulp-uglify');
 
@@ -113,8 +113,8 @@ const styles = function (done) {
 // Lint scripts
 const lintScripts = function (done) {
 	return src(paths.scripts.input)
-		.pipe(jshint())
-		.pipe(jshint.reporter('jshint-stylish'));
+		.pipe(eslint())
+    .pipe(eslint.format())
 };
 
 // Build scripts
