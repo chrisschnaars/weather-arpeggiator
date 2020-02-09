@@ -1,6 +1,7 @@
-const beatSettings = {
+let beatSettings = {
   numBeats: 8,
-  beats: []
+  beats: [],
+  activeBeat: null
 };
 
 class Beat {
@@ -11,16 +12,24 @@ class Beat {
   }
 
   createDomElement() {
-    // Create components
-    let d = document.createElement("div");
-    d.classList.add("beats__beat");
-    d.innerHTML = `<p class="beats__beat-reading">${this.temp}</p>`;
+    // console.log(this.temp);
+    const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}</p></div></div>`;
 
-    // Add to DOM
-    let bc = document.createElement("div");
-    bc.classList.add("beats__beat-container");
-    bc.appendChild(d);
-    document.querySelector(".beats").appendChild(bc);
+    // Add markup to beat container
+    document.querySelector(".beats").innerHTML += markup;
+  }
+
+  toggleActiveState() {
+    let beatDivs = document.querySelectorAll(".beats__beat");
+    let activeClass = "beats__beat--active";
+
+    if (beatSettings.activeBeat != null) {
+      beatDivs[beatSettings.activeBeat].classList.remove(activeClass);
+    }
+
+    beatDivs[this.id].classList.add(activeClass);
+
+    beatSettings.activeBeat = this.id;
   }
 }
 

@@ -1,38 +1,18 @@
 document
   .querySelector(".js-location-search-submit-btn")
-  .addEventListener("click", () => {
+  .addEventListener("click", function() {
     let loc = document.querySelector(".js-location-search-field").value;
-    console.log(loc);
     getWeatherData(loc);
   });
 
-let getWeatherData = loc => {
-  // Clear existing beats
+// Setup beat objects and data
+let setupBeats = j => {
   clearBeats();
-
-  // Check for empty strings
-  if ((loc = " ")) {
-    loc = "lat=35&lon=139";
-  }
-
-  // Create API call
-  const baseUrl = "https://api.openweathermap.org/data/2.5/forecast?";
-  const units = "&units=imperial";
-  const weatherKey = "&appid=54352b0dcabe57572744b22fd3043777";
-  const url = `${baseUrl}${loc}${units}${weatherKey}`;
-
-  fetch(url)
-    .then(function(r) {
-      return r.json();
-    })
-    .then(function(j) {
-      console.log(j);
-      createBeats(j);
-      setBeatPositions(j);
-    });
+  createBeatObjects(j);
+  setBeatData(j);
 };
 
-let createBeats = j => {
+let createBeatObjects = j => {
   for (let i = 0; i < beatSettings.numBeats; i++) {
     // Get temperature
     let t = Math.round(j.list[i].main.temp);
@@ -43,10 +23,9 @@ let createBeats = j => {
   }
 };
 
-let setBeatPositions = j => {
-  // Temps array
+let setBeatData = j => {
+  // Create an array of temps
   let temps = [];
-  let positions = [];
 
   // Add value to temp array
   for (let i = 0; i < beatSettings.numBeats; i++) {
@@ -56,18 +35,62 @@ let setBeatPositions = j => {
     temps.push(tRatio);
   }
 
-  // Grab min and max temperatures
-  let maxTemp = Math.max(...temps);
-  let minTemp = Math.min(...temps);
+  // Set min and max temps for the range
+  beatSettings.maxTemp = Math.max(...temps);
+  beatSettings.minTemp = Math.min(...temps);
 
-  // Set position and tone based on ratio
+  // Use this data to set beat positions and tone values
+  setBeatPositions(temps);
+  setBeatTones(temps);
+};
+
+// Set the vertical position of the beat
+// Corresponds to position of beat temp in temp range
+let setBeatPositions = temps => {
   for (let i = 0; i < beatSettings.numBeats; i++) {
-    let t = temps[i];
-    let p = mapNumberToRange(t, minTemp, maxTemp, 80, 0);
-    document.querySelectorAll(".beats__beat")[i].style.top = `${p}%`;
+    // Convert beat temp to vertical position
+    let p = mapNumberToRange(
+      temps[i],
+      beatSettings.minTemp,
+      beatSettings.maxTemp,
+      80,
+      0
+    );
 
-    let tone = mapNumberToRange(t, minTemp, maxTemp, 1, 2);
-    console.log(tone);
-    beatSettings.beats[i].tone = tone;
+    // Assign CSS value
+    document.querySelectorAll(".beats__beat")[i].style.top = `${p}%`;
   }
+};
+
+// Sets the beat's tone and corresponding vertical position
+let setBeatTones = temps => {
+  // Set root note based on min temp
+  audioSettings.root = mapNumberToRange(
+    beatSettings.minTemp,
+    -20,
+    120,
+    audioSettings.minRoot,
+    audioSettings.maxRoot
+  );
+
+  // Clear existing tone array
+  audioSettings.notes = [];
+
+  // Create tone array
+  for (let i = 0; i < beatSettings.numBeats; i++) {
+    let tone = mapNumberToRange(
+      temps[i],
+      beatSettings.minTemp,
+      beatSettings.maxTemp,
+      1,
+      2
+    );
+
+    // Add tone to array
+    audioSettings.notes.push(tone * audioSettings.root);
+  }
+
+  // Set ready flag
+  createPattern();
+  togglePlaying();
 };

@@ -6,8 +6,14 @@
 }
 
 .beats__beat {
-  background-color: orange;
+  background-color: $color-beats-primary;
   border-radius: 2rem;
   padding: 2rem;
   position: relative;
+  transition: transform $transition-duration-base $transition-timing-base;
+}
+
+.beats__beat--active {
+  background-color: red;
+  transform: scale(0.95);
 }

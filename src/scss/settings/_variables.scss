@@ -13,9 +13,13 @@ $color-gray: lighten($color-black, 30%);
 $color-lightest-gray: lighten($color-black, 85%);
 $color-white: #fff;
 $color-primary-orange: #fa6400;
+$color-blue-base: #11115e;
+$color-pink-base: #fe1079;
 
-$color-text-base: $color-black;
-$color-action: $color-primary-orange;
+$color-background: $color-blue-base;
+$color-text-base: $color-white;
+$color-action: $color-pink-base;
+$color-beats-primary: $color-pink-base;
 
 // Spacing
 $base-space-value: 0.5rem;
@@ -29,7 +33,7 @@ $space-values: (
   "6": $base-space-value * 6,
   "8": $base-space-value * 8,
   "12": $base-space-value * 12,
-  "16": $base-space-value * 16,
+  "16": $base-space-value * 16
 );
 
 $space-0: map-get($space-values, "0");
@@ -51,4 +55,4 @@ $breakpoint-x-large: 75em;
 $transition-duration-base: 125ms;
 $transition-duration-long: 300ms;
 
-$transition-timing-base: ease-in-out;
+$transition-timing-base: ease;
