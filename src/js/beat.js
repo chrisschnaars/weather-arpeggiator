@@ -1,6 +1,7 @@
 let beatSettings = {
   numBeats: 8,
   beats: [],
+  temps: [],
   activeBeat: null
 };
 
@@ -12,9 +13,14 @@ class Beat {
   }
 
   createDomElement() {
-    // console.log(this.temp);
+    // Beat markup
     const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}</p></div></div>`;
 
+    // Create beat container if this is first object
+    if (this.id === 0) {
+      const bc = `<div class="container__inner-container beats"></div>`;
+      document.querySelector(".site__main").innerHTML = bc;
+    }
     // Add markup to beat container
     document.querySelector(".beats").innerHTML += markup;
   }
@@ -32,11 +38,3 @@ class Beat {
     beatSettings.activeBeat = this.id;
   }
 }
-
-let clearBeats = () => {
-  let b = document.querySelectorAll(".beats__beat-container");
-  for (let i = 0; i < b.length; i++) {
-    b[i].remove();
-  }
-  beatSettings.beats = [];
-};

@@ -1,13 +1,36 @@
 let audioSettings = {
-  minRoot: 16.35,
-  maxRoot: 1046.5,
   notes: [],
   root: 220,
-  bpm: 100,
-  synth: new Tone.Synth().toMaster()
+  bpm: 0,
+  synth: new Tone.Synth().toMaster(),
+  playing: true
 };
 
-// Tone Sequence
+// Set tempo based on wind speed of first reading
+let setTempo = j => {
+  // Set windspeed and tempo ranges
+  const minSpeed = 0;
+  const maxSpeed = 30;
+  const minTempo = 80;
+  const maxTempo = 260;
+
+  // Get current windspeed
+  let speed = j.list[0].wind.speed;
+
+  // Map windspeed to tempo
+  audioSettings.bpm = mapNumberToRange(
+    speed,
+    minSpeed,
+    maxSpeed,
+    minTempo,
+    maxTempo
+  );
+
+  // Set temp
+  Tone.Transport.bpm.value = audioSettings.bpm;
+};
+
+// Create tone Sequence
 let pattern;
 let createPattern = () => {
   pattern = new Tone.Pattern(function(time, note) {
@@ -20,6 +43,16 @@ let createPattern = () => {
 
 // Toggle Playing
 let togglePlaying = () => {
-  Tone.Transport.bpm.value = audioSettings.bpm;
   Tone.Transport.toggle();
+};
+
+// Mute Toggle
+let updatePlayToggle = e => {
+  if (audioSettings.playing) {
+    e.target.innerText = "Play Audio";
+    audioSettings.playing = false;
+  } else {
+    e.target.innerText = "Pause Audio";
+    audioSettings.playing = true;
+  }
 };

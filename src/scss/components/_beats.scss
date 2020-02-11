@@ -1,3 +1,6 @@
+$_color-beats-primary: $color-yellow-base;
+$_color-beats-secondary: $color-yellow-dark;
+
 .beats {
   display: flex;
   height: 100%;
@@ -6,14 +9,22 @@
 }
 
 .beats__beat {
-  background-color: $color-beats-primary;
-  border-radius: 2rem;
-  padding: 2rem;
+  align-items: center;
+  background-color: $_color-beats-primary;
+  border-radius: 100%;
+  border: 0.5rem solid $_color-beats-secondary;
+  color: $color-black;
+  display: flex;
+  height: 3.5rem;
+  justify-content: center;
   position: relative;
-  transition: transform $transition-duration-base $transition-timing-base;
+  transition: transform $transition-duration-base $transition-timing-base,
+    background-color $transition-duration-long $transition-timing-base;
+  width: 3.5rem;
 }
 
 .beats__beat--active {
-  background-color: red;
-  transform: scale(0.95);
+  background-color: $_color-beats-secondary;
+  border-color: $_color-beats-secondary;
+  transform: scale(1.05);
 }

@@ -2,7 +2,8 @@ html {
   color: $color-text-base;
   font-family: $font-family-body;
   font-size: 100%;
-  letter-spacing: 0.2px;
+  font-weight: $font-weight-normal;
+  letter-spacing: 0.65px;
   line-height: 1;
 }
 
@@ -26,9 +27,9 @@ p {
 }
 
 a {
+  border-bottom: 2px solid $color-action;
   color: $color-text-base;
-  text-decoration: underline solid $color-action 2px;
-  text-underline-offset: 0.25rem;
+  text-decoration: none;
   transition: color $transition-duration-base $transition-timing-base;
 
   &:focus,

@@ -1,0 +1,11 @@
+.nav__nav-item-container {
+  display: flex;
+
+  > .nav__nav-item {
+    margin-left: $space-4;
+  }
+}
+
+.nav__nav-item--hidden {
+  display: none;
+}

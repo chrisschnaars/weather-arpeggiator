@@ -1,25 +1,27 @@
 // Fonts
-$font-family-body: monospace;
-$font-family-heading: monospace;
-
+$font-family-body: "Poppins", sans-serif;
+$font-family-heading: "Poppins", sans-serif;
+$font-weight-normal: 400;
+$font-weight-heavy: 600;
 // Font Sizes
 $font-size-16: 1rem;
 $font-size-24: 1.5rem;
 $font-size-36: 2.25rem;
 
-// Colors
+// Grays
 $color-black: #1d1c1c;
 $color-gray: lighten($color-black, 30%);
 $color-lightest-gray: lighten($color-black, 85%);
 $color-white: #fff;
-$color-primary-orange: #fa6400;
-$color-blue-base: #11115e;
-$color-pink-base: #fe1079;
 
-$color-background: $color-blue-base;
+// Color
+$color-purple-base: #3b2857;
+$color-yellow-base: #fab709;
+$color-yellow-dark: #d4990d;
+
+$color-background: $color-purple-base;
 $color-text-base: $color-white;
-$color-action: $color-pink-base;
-$color-beats-primary: $color-pink-base;
+$color-action: $color-yellow-base;
 
 // Spacing
 $base-space-value: 0.5rem;

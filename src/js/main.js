@@ -1,15 +1,10 @@
-document
-  .querySelector(".js-location-search-submit-btn")
-  .addEventListener("click", function() {
-    let loc = document.querySelector(".js-location-search-field").value;
-    getWeatherData(loc);
-  });
-
 // Setup beat objects and data
 let setupBeats = j => {
-  clearBeats();
+  // Setup new beat objects and data
   createBeatObjects(j);
   setBeatData(j);
+  setTempo(j);
+  toggleSiteState(j);
 };
 
 let createBeatObjects = j => {
@@ -25,36 +20,39 @@ let createBeatObjects = j => {
 
 let setBeatData = j => {
   // Create an array of temps
-  let temps = [];
+  beatSettings.temps = [];
 
   // Add value to temp array
   for (let i = 0; i < beatSettings.numBeats; i++) {
     let root = j.list[0].main.temp;
     let t = j.list[i].main.temp;
     let tRatio = t / root;
-    temps.push(tRatio);
+    beatSettings.temps.push(tRatio);
   }
 
   // Set min and max temps for the range
-  beatSettings.maxTemp = Math.max(...temps);
-  beatSettings.minTemp = Math.min(...temps);
+  beatSettings.maxTemp = Math.max(...beatSettings.temps);
+  beatSettings.minTemp = Math.min(...beatSettings.temps);
 
   // Use this data to set beat positions and tone values
-  setBeatPositions(temps);
-  setBeatTones(temps);
+  setBeatPositions();
+  setBeatTones();
 };
 
 // Set the vertical position of the beat
 // Corresponds to position of beat temp in temp range
-let setBeatPositions = temps => {
+let setBeatPositions = () => {
+  const minY = 0;
+  const maxY = maxBeatYPosition();
+
   for (let i = 0; i < beatSettings.numBeats; i++) {
     // Convert beat temp to vertical position
     let p = mapNumberToRange(
-      temps[i],
+      beatSettings.temps[i],
       beatSettings.minTemp,
       beatSettings.maxTemp,
-      80,
-      0
+      maxY,
+      minY
     );
 
     // Assign CSS value
@@ -63,14 +61,19 @@ let setBeatPositions = temps => {
 };
 
 // Sets the beat's tone and corresponding vertical position
-let setBeatTones = temps => {
+let setBeatTones = () => {
+  const minTempLevel = -20;
+  const maxTempLevel = 120;
+  const minRoot = 16.35;
+  const maxRoot = 1046.5;
+
   // Set root note based on min temp
   audioSettings.root = mapNumberToRange(
     beatSettings.minTemp,
-    -20,
-    120,
-    audioSettings.minRoot,
-    audioSettings.maxRoot
+    minTempLevel,
+    maxTempLevel,
+    minRoot,
+    maxRoot
   );
 
   // Clear existing tone array
@@ -79,7 +82,7 @@ let setBeatTones = temps => {
   // Create tone array
   for (let i = 0; i < beatSettings.numBeats; i++) {
     let tone = mapNumberToRange(
-      temps[i],
+      beatSettings.temps[i],
       beatSettings.minTemp,
       beatSettings.maxTemp,
       1,

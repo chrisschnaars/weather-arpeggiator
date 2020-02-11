@@ -47,27 +47,52 @@
     />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.2.0/Tone.js"></script>
   </head>
 
   <body class="site">
-    <header class="container site__header">
-      <label>Find a location</label>
-      <input
-        type="search"
-        class="location__search js-location-search-field"
-        value=""
-        placeholder="Find a location"
-      />
-      <button
-        type="submit"
-        class="location__submit-btn js-location-search-submit-btn"
+    <header class="container site__header header header--hidden">
+      <div
+        class="container__inner-container container__inner-container--split header__content-container"
       >
-        Submit
-      </button>
+        <h2 class="header__location-display"></h2>
+        <button
+          class="button button--secondary nav__nav-item js-change-location-btn"
+        >
+          Change Location
+        </button>
+      </div>
     </header>
 
     <main class="site__main container">
+      <div class="container__inner-container location-form">
+        <label class="location-form__cta-label"
+          >Where would you like to hear the weather for?</label
+        >
+
+        <div class="location-form__form-field-container">
+          <input
+            type="search"
+            class="location-form__text-field js-location-search-field"
+            value=""
+            placeholder="Enter city name"
+          />
+          <button
+            type="submit"
+            class="location-form__submit-btn button js-location-search-submit-btn"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+
       <div class="container__inner-container beats"></div>
     </main>
 
@@ -75,8 +100,15 @@
       <div class="container__inner-container container__inner-container--split">
         <h1>Weather Arpeggiator</h1>
 
-        <div>
-          <a href="https://github.com/chrisschnaars/weather-arpeggiator"
+        <div class="nav__nav-item-container">
+          <button
+            class="button button--secondary nav__nav-item nav__nav-item--hidden js-toggle-playing-btn"
+          >
+            Pause Audio
+          </button>
+          <a
+            class="nav__nav-item"
+            href="https://github.com/chrisschnaars/weather-arpeggiator"
             ><p>Github</p></a
           >
         </div>
