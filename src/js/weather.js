@@ -3,7 +3,7 @@ let getWeatherData = (lat, lng) => {
   const baseUrl = "https://api.openweathermap.org/data/2.5/forecast?";
   const coords = `lat=${lat}&lon=${lng}`;
   const units = "&units=imperial";
-  const weatherKey = "&appid=54352b0dcabe57572744b22fd3043777";
+  const weatherKey = `&appid=${OPEN_WEATHER_MAPS_KEY}`;
   const url = `${baseUrl}${coords}${units}${weatherKey}`;
 
   fetch(url)

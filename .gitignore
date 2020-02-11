@@ -4,6 +4,10 @@
 # ADMIN FILES
 /admin
 
+# SECRET STUFF
+apiKeys.js
+.env
+
 #DEPENDENCIES
 /node_modules
 

@@ -6,7 +6,7 @@ let getCoordinates = loc => {
 
   // Create API call
   const baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-  const key = "&key=AIzaSyBANFz3dZldaqxIUs0XjSxITT72Wo8BhhE";
+  const key = `&key=${GOOGLE_GEO_KEY}`;
   const url = `${baseUrl}${loc}${key}`;
 
   fetch(url)

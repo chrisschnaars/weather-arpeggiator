@@ -26,3 +26,6 @@ document.querySelector(".js-change-location-btn").addEventListener(
   },
   false
 );
+
+// Update beat positions on resize
+window.onresize = setBeatPositions;
