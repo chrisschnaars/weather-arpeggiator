@@ -2,7 +2,7 @@ let audioSettings = {
   notes: [],
   root: 220,
   bpm: 0,
-  synth: new Tone.Synth().toMaster(),
+  synth: new Tone.PolySynth().toMaster(),
   playing: true
 };
 
@@ -11,8 +11,8 @@ let setTempo = j => {
   // Set windspeed and tempo ranges
   const minSpeed = 0;
   const maxSpeed = 30;
-  const minTempo = 80;
-  const maxTempo = 260;
+  const minTempo = 100;
+  const maxTempo = 360;
 
   // Get current windspeed
   let speed = j.list[0].wind.speed;
@@ -49,10 +49,12 @@ let togglePlaying = () => {
 // Mute Toggle
 let updatePlayToggle = e => {
   if (audioSettings.playing) {
-    e.target.innerText = "Play Audio";
+    e.target.classList.remove("button__mute-btn");
+    e.target.classList.add("button__unmute-btn");
     audioSettings.playing = false;
   } else {
-    e.target.innerText = "Pause Audio";
+    e.target.classList.add("button__mute-btn");
+    e.target.classList.remove("button__unmute-btn");
     audioSettings.playing = true;
   }
 };

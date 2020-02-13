@@ -10,8 +10,7 @@ let displaySettings = {
 let toggleSiteState = (j = null) => {
   // Toggle DOM element display states
   toggleSiteHeader(j);
-  // toggleLocationSearchForm();
-  togglePlaybackControls();
+  toggleLocationSearchForm();
 
   // Clear beats and pause audio if active
   if (displaySettings.active) {
@@ -39,14 +38,10 @@ let toggleSiteHeader = j => {
 
 // Toggle Visibility of Location Search Form
 let toggleLocationSearchForm = () => {
-  let lf = document.querySelector(".location-form");
-  lf.classList.toggle("location-form--hidden");
-};
-
-// Toggle visibilty of audio playback controls
-let togglePlaybackControls = () => {
-  let m = document.querySelector(".js-toggle-playing-btn");
-  m.classList.toggle("nav__nav-item--hidden");
+  // Toggle display state
+  console.log("location form trigger");
+  let l = document.querySelector(".js-location-form-elem");
+  l.classList.toggle("location-form--hidden");
 };
 
 // Clear Beat Objects & Container

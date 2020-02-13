@@ -18,6 +18,7 @@ $_color-beats-secondary: $color-yellow-dark;
   height: 3.5rem;
   justify-content: center;
   position: relative;
+  top: calc(50% - 3.5rem);
   transition: transform $transition-duration-base $transition-timing-base,
     background-color $transition-duration-long $transition-timing-base;
   width: 3.5rem;

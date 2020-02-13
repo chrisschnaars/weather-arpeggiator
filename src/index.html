@@ -62,21 +62,23 @@
       <div
         class="container__inner-container container__inner-container--split header__content-container"
       >
+        <button
+          class="button button--icon button__back-btn js-change-location-btn"
+        ></button>
         <h2 class="header__location-display"></h2>
         <button
-          class="button button--secondary nav__nav-item js-change-location-btn"
-        >
-          Change Location
-        </button>
+          class="button button--icon button__mute-btn js-toggle-playing-btn"
+        ></button>
       </div>
     </header>
 
     <main class="site__main container">
-      <div class="container__inner-container location-form">
+      <div
+        class="container__inner-container location-form js-location-form-elem"
+      >
         <label class="location-form__cta-label"
           >Where would you like to hear the weather for?</label
         >
-
         <div class="location-form__form-field-container">
           <input
             type="search"
@@ -92,26 +94,15 @@
           </button>
         </div>
       </div>
-
-      <div class="container__inner-container beats"></div>
     </main>
 
     <footer class="container site__footer">
       <div class="container__inner-container container__inner-container--split">
         <h1>Weather Arpeggiator</h1>
 
-        <div class="nav__nav-item-container">
-          <button
-            class="button button--secondary nav__nav-item nav__nav-item--hidden js-toggle-playing-btn"
-          >
-            Pause Audio
-          </button>
-          <a
-            class="nav__nav-item"
-            href="https://github.com/chrisschnaars/weather-arpeggiator"
-            ><p>Github</p></a
-          >
-        </div>
+        <a href="https://github.com/chrisschnaars/weather-arpeggiator"
+          ><p>Github</p></a
+        >
       </div>
     </footer>
 

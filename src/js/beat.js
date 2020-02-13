@@ -19,7 +19,7 @@ class Beat {
     // Create beat container if this is first object
     if (this.id === 0) {
       const bc = `<div class="container__inner-container beats"></div>`;
-      document.querySelector(".site__main").innerHTML = bc;
+      document.querySelector(".site__main").innerHTML += bc;
     }
     // Add markup to beat container
     document.querySelector(".beats").innerHTML += markup;

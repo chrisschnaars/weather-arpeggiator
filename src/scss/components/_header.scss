@@ -3,14 +3,14 @@
 }
 
 .header__content-container {
-  align-items: center;
   display: flex;
-  flex-flow: column nowrap;
-  text-align: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .header__location-display {
   font-size: $font-size-24;
   line-height: 1.33333;
   margin-bottom: $space-1;
+  text-align: center;
 }

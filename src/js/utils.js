@@ -7,6 +7,6 @@ let maxBeatYPosition = () => {
   let beatHeight = document.querySelector(".beats__beat").offsetHeight;
   let beatContainerHeight = document.querySelector(".beats").offsetHeight;
 
-  let p = 100 * (1 - beatHeight / beatContainerHeight);
+  let p = 100 * (1 - (beatHeight + 16) / beatContainerHeight);
   return p;
 };

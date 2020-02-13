@@ -1,3 +1,5 @@
+$_button-icon-height: 2rem;
+
 .button {
   background-color: transparent;
   border-color: $color-white;
@@ -16,24 +18,34 @@
   white-space: nowrap;
 
   &:hover {
-    letter-spacing: 2px;
+    border-color: $color-action;
+    color: $color-action;
   }
 }
 
-.button--secondary {
-  background-color: transparent;
-  border-color: $color-action;
-  border-width: 0 0 2px 0;
-  color: $color-text-base;
-  display: inline-block;
-  font-weight: $font-weight-normal;
-  line-height: 1.5;
+.button--icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: none;
+  height: $_button-icon-height;
   padding: 0;
-  text-decoration: none;
-  transition: color $transition-duration-base $transition-timing-base;
+  width: $_button-icon-height;
 
   &:hover {
-    color: $color-action;
     letter-spacing: 0;
+    opacity: 0.75;
   }
+}
+
+.button__back-btn {
+  background-image: url(../assets/icons/icon_back-arrow.svg);
+}
+
+.button__mute-btn {
+  background-image: url(../assets/icons/icon_volume-off.svg);
+}
+
+.button__unmute-btn {
+  background-image: url(../assets/icons/icon_volume-on.svg);
 }

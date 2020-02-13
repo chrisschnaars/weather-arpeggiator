@@ -1,3 +1,7 @@
+// window.onload = function() {
+//   toggleLocationSearchForm();
+// };
+
 // Setup beat objects and data
 let setupBeats = j => {
   // Setup new beat objects and data
@@ -42,8 +46,6 @@ let setBeatData = j => {
 // Set the vertical position of the beat
 // Corresponds to position of beat temp in temp range
 let setBeatPositions = () => {
-  console.log("set");
-
   const minY = 0;
   const maxY = maxBeatYPosition();
 

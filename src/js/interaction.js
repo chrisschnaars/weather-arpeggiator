@@ -1,12 +1,11 @@
 // Form submission
-document.querySelector(".js-location-search-submit-btn").addEventListener(
-  "click",
-  function() {
+document
+  .querySelector(".js-location-search-submit-btn")
+  .addEventListener("click", function() {
+    console.log("submit location");
     let loc = document.querySelector(".js-location-search-field").value;
     getCoordinates(loc);
-  },
-  false
-);
+  });
 
 // Play/pause toggle
 document.querySelector(".js-toggle-playing-btn").addEventListener(
@@ -19,13 +18,13 @@ document.querySelector(".js-toggle-playing-btn").addEventListener(
 );
 
 // Change location button
-document.querySelector(".js-change-location-btn").addEventListener(
-  "click",
-  function() {
+document
+  .querySelector(".js-change-location-btn")
+  .addEventListener("click", function() {
     toggleSiteState(null);
-  },
-  false
-);
+  });
 
 // Update beat positions on resize
-window.onresize = setBeatPositions;
+window.onresize = function() {
+  setBeatPositions();
+};
