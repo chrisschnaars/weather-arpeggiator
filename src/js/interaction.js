@@ -1,30 +1,33 @@
 // Form submission
 document
-  .querySelector(".js-location-search-submit-btn")
-  .addEventListener("click", function() {
-    console.log("submit location");
+  .querySelector(".js-location-form")
+  .addEventListener("submit", function(e) {
+    e.preventDefault();
+    // Use search value to get coordinates and weather data
     let loc = document.querySelector(".js-location-search-field").value;
     getCoordinates(loc);
+    // TODO: add data validation
   });
 
 // Play/pause toggle
 document.querySelector(".js-toggle-playing-btn").addEventListener(
   "click",
   function(e) {
-    togglePlaying();
-    updatePlayToggle(e);
+    audioSettings.togglePlaying();
+    audioSettings.updatePlayToggle(e);
   },
   false
 );
 
-// Change location button
+// Back button
+// Toggle state back to form
 document
   .querySelector(".js-change-location-btn")
   .addEventListener("click", function() {
-    toggleSiteState(null);
+    displayState.toggleState();
   });
 
 // Update beat positions on resize
 window.onresize = function() {
-  setBeatPositions();
+  beatSettings.setBeatPositions();
 };

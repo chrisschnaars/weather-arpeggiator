@@ -11,6 +11,7 @@ let getWeatherData = (lat, lng) => {
       return r.json();
     })
     .then(function(j) {
-      setupBeats(j);
+      // TODO: add error handling
+      displayState.toggleState(j);
     });
 };

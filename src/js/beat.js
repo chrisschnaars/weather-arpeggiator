@@ -1,17 +1,9 @@
-let beatSettings = {
-  numBeats: 8,
-  beats: [],
-  temps: [],
-  activeBeat: null
-};
-
 class Beat {
   constructor(id, temp) {
     this.id = id;
     this.temp = temp;
-    this.tone = undefined;
   }
-
+  // FIXME: should these methods be in beat settings?
   createDomElement() {
     // Beat markup
     const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}</p></div></div>`;
