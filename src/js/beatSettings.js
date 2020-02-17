@@ -20,6 +20,17 @@ let beatSettings = {
       this.beats[i] = new Beat(i, t);
       this.beats[i].createDomElement();
     }
+
+    window.setTimeout(function() {
+      beatSettings.toggleBeatVisibility();
+    }, 50);
+  },
+  toggleBeatVisibility: function() {
+    let b = document.querySelectorAll(".beats__beat");
+
+    for (let i = 0; i < b.length; i++) {
+      b[i].style.animationDelay = `${i * 0.075}s`;
+    }
   },
   setBeatData: function(j) {
     // Set min and max temps for the range

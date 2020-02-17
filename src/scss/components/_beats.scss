@@ -10,6 +10,8 @@ $_color-beats-secondary: $color-yellow-dark;
 
 .beats__beat {
   align-items: center;
+  animation: bounceIn 1s;
+  animation-fill-mode: backwards;
   background-color: $_color-beats-primary;
   border-radius: 100%;
   border: 0.5rem solid $_color-beats-secondary;
@@ -28,4 +30,16 @@ $_color-beats-secondary: $color-yellow-dark;
   background-color: $_color-beats-secondary;
   border-color: $_color-beats-secondary;
   transform: scale(1.05);
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
