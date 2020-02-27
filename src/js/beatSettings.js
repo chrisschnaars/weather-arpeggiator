@@ -6,6 +6,10 @@ let beatSettings = {
   maxTemp: null,
   windSpeed: null,
   activeBeat: null,
+  toggleBeats: function() {
+    let b = document.querySelector(".beats");
+    b.classList.toggle("beats--hidden");
+  },
   setupBeats: function(j) {
     this.createBeats(j);
     this.setBeatData(j);
@@ -65,7 +69,13 @@ let beatSettings = {
     }
   },
   clearBeats: function() {
+    // Remove beats from DOM
+    let b = document.querySelectorAll(".beats__beat-container");
+
+    for (let i = 0; i < b.length; i++) {
+      b[i].remove();
+    }
+
     this.beats = [];
-    document.querySelector(".beats").remove();
   }
 };

@@ -77,7 +77,7 @@
         class="container__inner-container location-form js-location-form-container"
       >
         <form class="location-form__form js-location-form">
-          <label class="location-form__cta-label"
+          <label class="location-form__cta-label js-location-form-label"
             >Where would you like to hear the weather for?
           </label>
 
@@ -88,15 +88,16 @@
               value=""
               placeholder="Enter city name"
             />
-            <button
+            <input
               type="submit"
               class="location-form__submit-btn button js-location-search-submit-btn"
-            >
-              Submit
-            </button>
+              value="Submit"
+            />
           </div>
         </form>
       </div>
+
+      <div class="container__inner-container beats beats--hidden"></div>
     </main>
 
     <footer class="container site__footer">

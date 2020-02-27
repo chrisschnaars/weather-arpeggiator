@@ -18,6 +18,8 @@ let getCoordinates = loc => {
         let lat = j.results[0].geometry.location.lat;
         let lng = j.results[0].geometry.location.lng;
         getWeatherData(lat, lng);
+      } else {
+        locationForm.toggleResultsError();
       }
     });
 };

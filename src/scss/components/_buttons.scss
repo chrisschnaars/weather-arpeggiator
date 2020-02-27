@@ -17,7 +17,8 @@ $_button-icon-height: 2rem;
   vertical-align: middle;
   white-space: nowrap;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: $color-action;
     color: $color-action;
   }

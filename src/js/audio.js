@@ -7,8 +7,27 @@ let audioSettings = {
   notes: [],
   pattern: null,
   bpm: null,
-  synth: new Tone.PolySynth().toMaster(),
-  playing: true,
+  synth: new Tone.PolySynth(8, Tone.Synth, {
+    oscillator: {
+      type: "sine"
+    },
+    envelope: {
+      attack: 0.1,
+      decay: 0.1,
+      sustain: 0.5,
+      release: 0.45
+    },
+    lfo: {
+      type: "sine",
+      min: 0,
+      max: 1,
+      phase: 5,
+      frequency: "4n",
+      amplitude: 1,
+      units: Tone.Type.Default
+    }
+  }).toMaster(),
+  playing: false,
   setupAudio: function() {
     this.setTempo();
     this.setNoteArray();
@@ -35,9 +54,6 @@ let audioSettings = {
     // Set root note based on min temp
     this.root = this.setRootNote();
 
-    // Clear existing tone array
-    this.notes = [];
-
     // Create tone array
     for (let i = 0; i < beatSettings.numBeats; i++) {
       const intervalMin = 1;
@@ -59,7 +75,9 @@ let audioSettings = {
     // When notes are ready, toggle playing
     // FIXME: Is there a better way to handle this?
     this.createPattern();
-    this.togglePlaying();
+    window.setTimeout(() => {
+      this.togglePlaying();
+    }, 1000);
   },
   setTempo: function() {
     // Set windspeed and tempo ranges
@@ -92,16 +110,20 @@ let audioSettings = {
   },
   togglePlaying: function() {
     Tone.Transport.toggle();
+    this.playing = this.playing ? false : true;
   },
   updatePlayToggle: function(e) {
     if (audioSettings.playing) {
       e.target.classList.remove("button__mute-btn");
       e.target.classList.add("button__unmute-btn");
-      this.playing = false;
     } else {
       e.target.classList.add("button__mute-btn");
       e.target.classList.remove("button__unmute-btn");
-      this.playing = true;
     }
+  },
+  clearNotes: function() {
+    this.notes = [];
+    this.pattern.stop();
+    console.log(this.notes);
   }
 };

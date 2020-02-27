@@ -11,7 +11,10 @@ let getWeatherData = (lat, lng) => {
       return r.json();
     })
     .then(function(j) {
-      // TODO: add error handling
-      displayState.toggleState(j);
+      if (j.list.length > 0) {
+        displayState.toggleState(j);
+      } else {
+        locationForm.toggleResultsError();
+      }
     });
 };

@@ -8,9 +8,11 @@
   justify-content: space-between;
 }
 
+.header--active {
+  animation: 1s animateIn;
+}
+
 .header__location-display {
   font-size: $font-size-24;
   line-height: 1.33333;
-  margin-bottom: $space-1;
-  text-align: center;
 }

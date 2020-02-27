@@ -1,3 +1,5 @@
+$_animationDuration: 1s;
+
 .location-form--hidden {
   display: none;
 }
@@ -5,31 +7,48 @@
 .location-form__form {
   display: block;
   flex-flow: column nowrap;
-  margin: $space-4 auto 0;
+  margin: 12vh auto 0;
   max-width: 820px;
 }
 
 .location-form__cta-label {
+  animation: $_animationDuration ease 0.15s backwards animateIn;
   font-size: $font-size-24;
-  line-height: 1.25;
-  margin-bottom: $space-3;
+  line-height: 1.5;
+  margin-bottom: $space-4;
 }
 
 .location-form__form-field-container {
+  animation: $_animationDuration ease 0.2s backwards animateIn;
   display: flex;
 }
 
 .location-form__text-field {
-  color: $color-lightest-gray;
+  color: $color-white;
   border-width: 0 0 0.25rem 0;
   background-color: $color-background;
-  color: $color-white;
   font-size: $font-size-36;
   height: 4rem;
   margin-right: $space-2;
+  width: 100%;
 
   &:focus {
     border-color: $color-action;
     color: $color-white;
+  }
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
   }
 }

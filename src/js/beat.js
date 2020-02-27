@@ -8,11 +8,6 @@ class Beat {
     // Beat markup
     const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}</p></div></div>`;
 
-    // Create beat container if this is first object
-    if (this.id === 0) {
-      const bc = `<div class="container__inner-container beats"></div>`;
-      document.querySelector(".site__main").innerHTML += bc;
-    }
     // Add markup to beat container
     document.querySelector(".beats").innerHTML += markup;
   }
