@@ -7,24 +7,15 @@ let audioSettings = {
   notes: [],
   pattern: null,
   bpm: null,
-  synth: new Tone.PolySynth(8, Tone.Synth, {
+  synth: new Tone.PolySynth(4, Tone.Synth, {
     oscillator: {
       type: "sine"
     },
     envelope: {
-      attack: 0.1,
+      attack: 0.001,
       decay: 0.1,
-      sustain: 0.5,
-      release: 0.45
-    },
-    lfo: {
-      type: "sine",
-      min: 0,
-      max: 1,
-      phase: 5,
-      frequency: "4n",
-      amplitude: 1,
-      units: Tone.Type.Default
+      sustain: 0.1,
+      release: 0.9
     }
   }).toMaster(),
   playing: false,
@@ -37,7 +28,7 @@ let audioSettings = {
     const minTempLevel = -50;
     const maxTempLevel = 150;
     const minRoot = 0;
-    const maxRoot = 900;
+    const maxRoot = 600;
 
     // Set root note based on min temp
     let r = mapNumberToRange(
@@ -83,8 +74,8 @@ let audioSettings = {
     // Set windspeed and tempo ranges
     const minSpeed = 0;
     const maxSpeed = 30;
-    const minTempo = 100;
-    const maxTempo = 360;
+    const minTempo = 80;
+    const maxTempo = 320;
 
     // Map windspeed to tempo
     this.bpm = Math.floor(
