@@ -1,25 +1,18 @@
-let getCoordinates = loc => {
-  // Check for empty strings
-  if (loc === "") {
-    loc = "Brooklyn, NY"; // Brooklyn
-  }
+const getCoordinates = (loc = 'Brooklyn') => {
+	// Create API call
+	const baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+	const key = `&key=${API_KEYS.googleMaps}`;
+	const url = `${baseUrl}${loc}${key}`;
 
-  // Create API call
-  const baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-  const key = `&key=${GOOGLE_GEO_KEY}`;
-  const url = `${baseUrl}${loc}${key}`;
-
-  fetch(url)
-    .then(function(r) {
-      return r.json();
-    })
-    .then(function(j) {
-      if (j.status === "OK") {
-        let lat = j.results[0].geometry.location.lat;
-        let lng = j.results[0].geometry.location.lng;
-        getWeatherData(lat, lng);
-      } else {
-        locationForm.toggleResultsError();
-      }
-    });
+	fetch(url)
+		.then((r) => r.json())
+		.then((j) => {
+			if (j.status === 'OK') {
+				const { lat } = j.results[0].geometry.location;
+				const { lng } = j.results[0].geometry.location;
+				getWeatherData(lat, lng);
+			} else {
+				locationForm.toggleResultsError();
+			}
+		});
 };

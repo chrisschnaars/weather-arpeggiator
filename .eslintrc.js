@@ -1,11 +1,20 @@
-var config = {
+module.exports = {
   env: {
+    browser: true,
     es6: true,
-    browser: true
   },
-  extends: "eslint:recommended",
+  extends: 'eslint:recommended',
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+  },
   rules: {
-    "no-console": ["error", { allow: ["warn", "error"] }]
+    indent: ['error', 'tab'],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
   },
-  parserOptions: { ecmaVersion: 6 }
 };

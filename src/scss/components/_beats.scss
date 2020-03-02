@@ -1,11 +1,18 @@
 $_color-beats-primary: $color-yellow-base;
 $_color-beats-secondary: $color-yellow-dark;
 $_beat-size: 3.5rem;
+$_beat-size--small: 2.5rem;
+$_beat-animation-duration: 0.75s;
 
 .beats {
   display: flex;
+  flex-direction: column;
   height: 100%;
   justify-content: space-between;
+
+  @media (min-width: $breakpoint-medium) {
+    flex-direction: row;
+  }
 }
 
 .beats--hidden {
@@ -14,19 +21,28 @@ $_beat-size: 3.5rem;
 
 .beats__beat {
   align-items: center;
-  animation: 0.5s backwards bounceIn;
+  animation: $_beat-animation-duration backwards bounceIn;
   background-color: $_color-beats-primary;
+  border-color: $_color-beats-secondary;
   border-radius: 100%;
-  border: 0.5rem solid $_color-beats-secondary;
+  border-style: solid;
+  border-width: 0.25rem;
   color: $color-black;
   display: flex;
-  height: $_beat-size;
+  height: $_beat-size--small;
   justify-content: center;
   position: relative;
-  top: calc(50% - 3.5rem);
+  top: 0;
   transition: transform $transition-duration-base $transition-timing-base,
     background-color $transition-duration-long $transition-timing-base;
-  width: $_beat-size;
+  width: $_beat-size--small;
+
+  @media (min-width: $breakpoint-medium) {
+    border-width: 0.5rem;
+    height: $_beat-size;
+    top: calc(50% - 3.5rem);
+    width: $_beat-size;
+  }
 }
 
 .beats__beat--active {

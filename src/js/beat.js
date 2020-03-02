@@ -1,27 +1,28 @@
 class Beat {
-  constructor(id, temp) {
-    this.id = id;
-    this.temp = temp;
-  }
-  // FIXME: should these methods be in beat settings?
-  createDomElement() {
-    // Beat markup
-    const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}</p></div></div>`;
+	constructor(id, temp) {
+		this.id = id;
+		this.temp = temp;
+	}
 
-    // Add markup to beat container
-    document.querySelector(".beats").innerHTML += markup;
-  }
+	// FIXME: should these methods be in beat settings?
+	createDomElement() {
+		// Beat markup
+		const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}</p></div></div>`;
 
-  toggleActiveState() {
-    let beatDivs = document.querySelectorAll(".beats__beat");
-    let activeClass = "beats__beat--active";
+		// Add markup to beat container
+		document.querySelector('.beats').innerHTML += markup;
+	}
 
-    if (beatSettings.activeBeat != null) {
-      beatDivs[beatSettings.activeBeat].classList.remove(activeClass);
-    }
+	toggleActiveState() {
+		const beatDivs = document.querySelectorAll('.beats__beat');
+		const activeClass = 'beats__beat--active';
 
-    beatDivs[this.id].classList.add(activeClass);
+		if (beatSettings.activeBeat != null) {
+			beatDivs[beatSettings.activeBeat].classList.remove(activeClass);
+		}
 
-    beatSettings.activeBeat = this.id;
-  }
+		beatDivs[this.id].classList.add(activeClass);
+
+		beatSettings.activeBeat = this.id;
+	}
 }

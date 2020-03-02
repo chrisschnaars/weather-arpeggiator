@@ -1,33 +1,29 @@
 // Form submission
-document
-  .querySelector(".js-location-form")
-  .addEventListener("submit", function(e) {
-    e.preventDefault();
+document.querySelector('.js-location-form').addEventListener('submit', (e) => {
+	e.preventDefault();
 
-    // Use search value to get coordinates and weather data
-    let loc = document.querySelector(".js-location-search-field").value;
-    getCoordinates(loc);
-  });
+	// Use search value to get coordinates and weather data
+	const loc = document.querySelector('.js-location-search-field').value;
+	getCoordinates(loc);
+});
 
 // Play/pause toggle
-document.querySelector(".js-toggle-playing-btn").addEventListener(
-  "click",
-  function(e) {
-    audioSettings.updatePlayToggle(e);
-    audioSettings.togglePlaying();
-  },
-  false
+document.querySelector('.js-toggle-playing-btn').addEventListener(
+	'click',
+	(e) => {
+		audioSettings.updatePlayToggle(e);
+		audioSettings.togglePlaying();
+	},
+	false,
 );
 
 // Back button
 // Toggle state back to form
-document
-  .querySelector(".js-change-location-btn")
-  .addEventListener("click", function() {
-    displayState.toggleState();
-  });
+document.querySelector('.js-change-location-btn').addEventListener('click', () => {
+	displayState.toggleState();
+});
 
 // Update beat positions on resize
-window.onresize = function() {
-  beatSettings.setBeatPositions();
+window.onresize = function () {
+	beatSettings.setBeatPositions();
 };

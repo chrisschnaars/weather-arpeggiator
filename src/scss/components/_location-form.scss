@@ -13,28 +13,46 @@ $_animationDuration: 1s;
 
 .location-form__cta-label {
   animation: $_animationDuration ease 0.15s backwards animateIn;
-  font-size: $font-size-24;
+  font-size: $font-size-16;
   line-height: 1.5;
-  margin-bottom: $space-4;
+  margin-bottom: $space-3;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $font-size-24;
+    margin-bottom: $space-4;
+  }
 }
 
 .location-form__form-field-container {
   animation: $_animationDuration ease 0.2s backwards animateIn;
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-medium) {
+    flex-direction: row;
+  }
 }
 
 .location-form__text-field {
-  color: $color-white;
-  border-width: 0 0 0.25rem 0;
+  border-color: $color-lightest-gray;
+  border-width: 0 0 1px 0;
   background-color: $color-background;
-  font-size: $font-size-36;
-  height: 4rem;
-  margin-right: $space-2;
+  color: $color-white;
+  font-size: $font-size-16;
+  height: 3rem;
+  margin: 0 0 $space-2 0;
   width: 100%;
 
   &:focus {
     border-color: $color-action;
     color: $color-white;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    border-width: 0 0 0.25rem 0;
+    font-size: $font-size-36;
+    height: 4rem;
+    margin: 0 $space-2 0 0;
   }
 }
 
