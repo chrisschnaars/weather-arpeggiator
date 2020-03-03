@@ -13,14 +13,9 @@ $_animationDuration: 1s;
 
 .location-form__cta-label {
   animation: $_animationDuration ease 0.15s backwards animateIn;
-  font-size: $font-size-16;
+  font-size: $font-size-24;
   line-height: 1.5;
-  margin-bottom: $space-3;
-
-  @media (min-width: $breakpoint-medium) {
-    font-size: $font-size-24;
-    margin-bottom: $space-4;
-  }
+  margin-bottom: $space-4;
 }
 
 .location-form__form-field-container {
@@ -35,12 +30,12 @@ $_animationDuration: 1s;
 
 .location-form__text-field {
   border-color: $color-lightest-gray;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 $border-size-small 0;
   background-color: $color-background;
   color: $color-white;
-  font-size: $font-size-16;
-  height: 3rem;
-  margin: 0 0 $space-2 0;
+  font-size: $font-size-24;
+  margin: 0 0 $space-4 0;
+  padding-bottom: 0.5rem;
   width: 100%;
 
   &:focus {
@@ -49,10 +44,11 @@ $_animationDuration: 1s;
   }
 
   @media (min-width: $breakpoint-medium) {
-    border-width: 0 0 0.25rem 0;
+    border-width: 0 0 $border-size-large 0;
     font-size: $font-size-36;
     height: 4rem;
     margin: 0 $space-2 0 0;
+    // padding-bottom: unset;
   }
 }
 

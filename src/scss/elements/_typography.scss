@@ -12,22 +12,22 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-size: $font-size-16;
+h6,
+p {
+  font-size: $font-size-14;
   font-family: $font-family-heading;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.42857;
   margin: 0;
-}
 
-p {
-  font-size: $font-size-16;
-  line-height: 1.5;
-  margin: 0;
+  @media (min-width: $breakpoint-medium) {
+    font-size: $font-size-16;
+    line-height: 1.5;
+  }
 }
 
 a {
-  border-bottom: 2px solid $color-action;
+  border-bottom: $border-size-small solid $color-action;
   color: $color-text-base;
   text-decoration: none;
   transition: color $transition-duration-base $transition-timing-base;

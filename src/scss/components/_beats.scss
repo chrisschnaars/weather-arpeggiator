@@ -33,8 +33,7 @@ $_beat-animation-duration: 0.75s;
   justify-content: center;
   position: relative;
   top: 0;
-  transition: transform $transition-duration-base $transition-timing-base,
-    background-color $transition-duration-long $transition-timing-base;
+  transition: all $transition-duration-base $transition-timing-base;
   width: $_beat-size--small;
 
   @media (min-width: $breakpoint-medium) {
@@ -46,9 +45,9 @@ $_beat-animation-duration: 0.75s;
 }
 
 .beats__beat--active {
-  background-color: $_color-beats-secondary;
-  border-color: $_color-beats-secondary;
-  transform: scale(1.05);
+  background-color: $_color-beats-primary;
+  border-color: $_color-beats-primary;
+  transform: scale(1.25);
 }
 
 @keyframes bounceIn {
