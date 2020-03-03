@@ -11,7 +11,7 @@ const getCoordinates = (loc) => {
 				const { lat } = j.results[0].geometry.location;
 				const { lng } = j.results[0].geometry.location;
 				getWeatherData(lat, lng);
-				siteHeader.location = loc;
+				siteHeader.searchTerm = loc;
 			} else {
 				locationForm.toggleResultsError();
 			}

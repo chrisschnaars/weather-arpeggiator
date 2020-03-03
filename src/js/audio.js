@@ -37,18 +37,6 @@ const audioSettings = {
 
 		// Create tone array
 		for (let i = 0; i < beatSettings.numBeats; i++) {
-			// const intervalMin = 1;
-			// const intervalMax = 2;
-			//
-			// // Normalize
-			// let interval = mapNumberToRange(
-			//   beatSettings.temps[i],
-			//   beatSettings.minTemp,
-			//   beatSettings.maxTemp,
-			//   intervalMin,
-			//   intervalMax
-			// );
-
 			const interval = beatSettings.temps[i] / beatSettings.temps[0];
 
 			// Create note by multipling interval and root
@@ -78,8 +66,6 @@ const audioSettings = {
 		Tone.Transport.bpm.value = audioSettings.bpm;
 	},
 	createPattern() {
-		console.log('create pattern');
-
 		this.pattern = new Tone.Pattern(function (time, note) {
 			audioSettings.synth.triggerAttackRelease(note, 0.25);
 			beatSettings.beats[this.index].toggleActiveState();
