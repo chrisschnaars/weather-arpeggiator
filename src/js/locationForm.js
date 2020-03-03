@@ -9,6 +9,6 @@ const locationForm = {
 	},
 	toggleResultsError() {
 		const l = document.querySelector('.js-location-form-label');
-		l.innerHTML = 'No weather data found for your location.<br/>How about trying again?';
+		l.innerHTML = 'No weather data found for your location.&nbsp;<br class="location-form__error-line-break"/>How about trying again?';
 	},
 };

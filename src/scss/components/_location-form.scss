@@ -18,12 +18,20 @@ $_animationDuration: 1s;
   margin-bottom: $space-4;
 }
 
+.location-form__error-line-break {
+  display: none;
+
+  @media (min-width: $breakpoint-small) {
+    display: block;
+  }
+}
+
 .location-form__form-field-container {
   animation: $_animationDuration ease 0.2s backwards animateIn;
   display: flex;
   flex-direction: column;
 
-  @media (min-width: $breakpoint-medium) {
+  @media (min-width: $breakpoint-small) {
     flex-direction: row;
   }
 }
@@ -35,6 +43,7 @@ $_animationDuration: 1s;
   color: $color-white;
   font-size: $font-size-24;
   margin: 0 0 $space-4 0;
+  min-width: 0%;
   padding-bottom: 0.5rem;
   width: 100%;
 
@@ -43,7 +52,7 @@ $_animationDuration: 1s;
     color: $color-white;
   }
 
-  @media (min-width: $breakpoint-medium) {
+  @media (min-width: $breakpoint-small) {
     border-width: 0 0 $border-size-large 0;
     font-size: $font-size-36;
     height: 4rem;
