@@ -11,11 +11,21 @@ document.querySelector('.js-location-form').addEventListener('submit', (e) => {
 document.querySelector('.js-toggle-playing-btn').addEventListener(
 	'click',
 	(e) => {
-		audioSettings.updatePlayToggle(e);
+		audioSettings.updatePlayToggle();
 		audioSettings.togglePlaying();
 	},
 	false,
 );
+
+// Spacebar triggers play pause
+document.body.onkeyup = (e) => {
+	if (displayState.beatsActive) {
+		if (e.keyCode === 32) {
+			audioSettings.updatePlayToggle();
+			audioSettings.togglePlaying();
+		}
+	}
+};
 
 // Back button
 // Toggle state back to form
