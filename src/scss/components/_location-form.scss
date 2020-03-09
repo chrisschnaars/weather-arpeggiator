@@ -1,77 +1,77 @@
 $_animationDuration: 1s;
 
 .location-form--hidden {
-  display: none;
+	display: none;
 }
 
 .location-form__form {
-  display: block;
-  flex-flow: column nowrap;
-  margin: 12vh auto 0;
-  max-width: 820px;
+	display: block;
+	flex-flow: column nowrap;
+	margin: 12vh auto 0;
+	max-width: 820px;
 }
 
 .location-form__cta-label {
-  animation: $_animationDuration ease 0.15s backwards animateIn;
-  font-size: $font-size-24;
-  line-height: 1.5;
-  margin-bottom: $space-4;
+	animation: $_animationDuration ease 0.15s backwards animateIn;
+	font-size: $font-size-24;
+	line-height: 1.5;
+	margin-bottom: $space-4;
 }
 
 .location-form__error-line-break {
-  display: none;
+	display: none;
 
-  @media (min-width: $breakpoint-small) {
-    display: block;
-  }
+	@media (min-width: $breakpoint-small) {
+		display: block;
+	}
 }
 
 .location-form__form-field-container {
-  animation: $_animationDuration ease 0.2s backwards animateIn;
-  display: flex;
-  flex-direction: column;
+	animation: $_animationDuration ease 0.2s backwards animateIn;
+	display: flex;
+	flex-direction: column;
 
-  @media (min-width: $breakpoint-small) {
-    flex-direction: row;
-  }
+	@media (min-width: $breakpoint-small) {
+		flex-direction: row;
+	}
 }
 
 .location-form__text-field {
-  border-color: $color-lightest-gray;
-  border-width: 0 0 $border-size-small 0;
-  background-color: $color-background;
-  color: $color-white;
-  font-size: $font-size-24;
-  margin: 0 0 $space-4 0;
-  min-width: 0%;
-  padding-bottom: 0.5rem;
-  width: 100%;
+	border-color: $color-lightest-gray;
+	border-width: 0 0 $border-size-small 0;
+	background-color: transparent;
+	color: $color-white;
+	font-size: $font-size-24;
+	margin: 0 0 $space-4 0;
+	min-width: 0%;
+	padding-bottom: 0.5rem;
+	width: 100%;
 
-  &:focus {
-    border-color: $color-action;
-    color: $color-white;
-  }
+	&:focus {
+		border-color: $color-action;
+		color: $color-white;
+	}
 
-  @media (min-width: $breakpoint-small) {
-    border-width: 0 0 $border-size-large 0;
-    font-size: $font-size-36;
-    height: 4rem;
-    margin: 0 $space-2 0 0;
-    // padding-bottom: unset;
-  }
+	@media (min-width: $breakpoint-small) {
+		border-width: 0 0 $border-size-large 0;
+		font-size: $font-size-36;
+		height: 4rem;
+		margin: 0 $space-2 0 0;
+		// padding-bottom: unset;
+	}
 }
 
 @keyframes animateIn {
-  from {
-    opacity: 0;
-    transform: translateY(4rem);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
 
-  50% {
-    transform: translateY(0);
-  }
+	50% {
+		transform: translateY(0);
+	}
 
-  to {
-    opacity: 1;
-  }
+	to {
+		opacity: 1;
+	}
 }

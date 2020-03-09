@@ -1,5 +1,5 @@
 const displayState = {
-	beatsActive: false,
+	active: false,
 	toggleState(j = null) {
 		// Each time state is toggled
 		// Toggle form and header display
@@ -15,8 +15,11 @@ const displayState = {
 			document.querySelector('.js-location-form').reset();
 			beatSettings.setupBeats(j);
 
+			// Set backround color
+			backgroundColors.setBackgroundColor(j);
+
 			// Toggle status flag
-			this.beatsActive = true;
+			this.active = true;
 		} else {
 			// Remove beat objects
 			beatSettings.clearBeats();
@@ -30,7 +33,7 @@ const displayState = {
 			audioSettings.clearNotes();
 
 			// Toggle status flag
-			this.beatsActive = false;
+			this.active = false;
 		}
-	},
+	}
 };

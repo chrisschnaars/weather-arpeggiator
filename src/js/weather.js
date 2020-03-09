@@ -7,8 +7,8 @@ const getWeatherData = (lat, lng) => {
 	const url = `${baseUrl}${coords}${units}${weatherKey}`;
 
 	fetch(url)
-		.then((r) => r.json())
-		.then((j) => {
+		.then(r => r.json())
+		.then(j => {
 			if (j.list.length > 0) {
 				displayState.toggleState(j);
 			} else {

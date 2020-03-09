@@ -57,14 +57,28 @@ const beatSettings = {
 
 		for (let i = 0; i < this.numBeats; i += 1) {
 			// Convert beat temp to vertical position
-			const leftValue = mapNumberToRange(this.temps[i], this.minTemp, this.maxTemp, min, maxX);
-			const topValue = mapNumberToRange(this.temps[i], this.minTemp, this.maxTemp, maxY, min);
+			const leftValue = mapNumberToRange(
+				this.temps[i],
+				this.minTemp,
+				this.maxTemp,
+				min,
+				maxX
+			);
+			const topValue = mapNumberToRange(
+				this.temps[i],
+				this.minTemp,
+				this.maxTemp,
+				maxY,
+				min
+			);
 
 			// Assign CSS value
 			if (window.innerWidth >= 768) {
 				document.querySelectorAll('.beats__beat')[i].style.top = `${topValue}%`;
 			} else {
-				document.querySelectorAll('.beats__beat')[i].style.left = `${leftValue}%`;
+				document.querySelectorAll('.beats__beat')[
+					i
+				].style.left = `${leftValue}%`;
 			}
 		}
 	},
@@ -77,7 +91,7 @@ const beatSettings = {
 		}
 
 		this.beats = [];
-	},
+	}
 };
 
 const maxBeatPositions = () => {
@@ -90,7 +104,7 @@ const maxBeatPositions = () => {
 	// Calculate percentage to return as values
 	const max = {
 		maxX: 100 * (1 - beatWidth / beatContainerWidth),
-		maxY: 100 * (1 - (beatHeight + 16) / beatContainerHeight),
+		maxY: 100 * (1 - beatHeight / beatContainerHeight)
 	};
 	return max;
 };

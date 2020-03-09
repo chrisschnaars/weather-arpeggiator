@@ -1,5 +1,5 @@
 // Form submission
-document.querySelector('.js-location-form').addEventListener('submit', (e) => {
+document.querySelector('.js-location-form').addEventListener('submit', e => {
 	e.preventDefault();
 
 	// Use search value to get coordinates and weather data
@@ -10,16 +10,16 @@ document.querySelector('.js-location-form').addEventListener('submit', (e) => {
 // Play/pause toggle
 document.querySelector('.js-toggle-playing-btn').addEventListener(
 	'click',
-	(e) => {
+	e => {
 		audioSettings.updatePlayToggle();
 		audioSettings.togglePlaying();
 	},
-	false,
+	false
 );
 
 // Spacebar triggers play pause
-document.body.onkeyup = (e) => {
-	if (displayState.beatsActive) {
+document.body.onkeyup = e => {
+	if (displayState.active) {
 		if (e.keyCode === 32) {
 			audioSettings.updatePlayToggle();
 			audioSettings.togglePlaying();
@@ -29,11 +29,13 @@ document.body.onkeyup = (e) => {
 
 // Back button
 // Toggle state back to form
-document.querySelector('.js-change-location-btn').addEventListener('click', () => {
-	displayState.toggleState();
-});
+document
+	.querySelector('.js-change-location-btn')
+	.addEventListener('click', () => {
+		displayState.toggleState();
+	});
 
 // Update beat positions on resize
-window.onresize = function () {
+window.onresize = function() {
 	beatSettings.setBeatPositions();
 };
