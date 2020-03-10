@@ -5,6 +5,11 @@ const backgroundColors = {
 		['#5C6289', '#373A4D', '#767CA3', '#4C4F6A', '232, 20%, 10%'], // Night, Clear
 		['#464656', '#14161C', '#5E5E73', '#282C39', '240, 10%, 10%'] // Night, Cloudy
 	],
+	toggleInactiveStateBackground() {
+		const inactiveClass = 'site--inactive-bg';
+		document.querySelector('.site__main').classList.toggle(inactiveClass);
+		document.querySelector('.site__footer').classList.toggle(inactiveClass);
+	},
 	setBackgroundColor(j) {
 		// Get color condition
 		let timeId = this.getColorCondition(j);
@@ -82,7 +87,6 @@ let getLocalTime = j => {
 	let currDate = new Date();
 	let currTime = Math.round(new Date().getTime() / 1000);
 	let currOffset = currDate.getTimezoneOffset() * 60;
-	console.log('offset' + currOffset);
 
 	// Calculate the current timestamp
 	let localizedTime = currTime + currOffset + j.city.timezone;

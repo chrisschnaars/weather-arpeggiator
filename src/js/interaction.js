@@ -1,16 +1,18 @@
 // Form submission
-document.querySelector('.js-location-form').addEventListener('submit', e => {
-	e.preventDefault();
+document
+	.querySelector('.js-location-form')
+	.addEventListener('submit', function(e) {
+		e.preventDefault();
 
-	// Use search value to get coordinates and weather data
-	const loc = document.querySelector('.js-location-search-field').value;
-	getCoordinates(loc);
-});
+		// Use search value to get coordinates and weather data
+		const loc = document.querySelector('.js-location-search-field').value;
+		getCoordinates(loc);
+	});
 
 // Play/pause toggle
 document.querySelector('.js-toggle-playing-btn').addEventListener(
 	'click',
-	e => {
+	function() {
 		audioSettings.updatePlayToggle();
 		audioSettings.togglePlaying();
 	},
@@ -18,7 +20,7 @@ document.querySelector('.js-toggle-playing-btn').addEventListener(
 );
 
 // Spacebar triggers play pause
-document.body.onkeyup = e => {
+document.body.onkeyup = function(e) {
 	if (displayState.active) {
 		if (e.keyCode === 32) {
 			audioSettings.updatePlayToggle();
@@ -31,7 +33,7 @@ document.body.onkeyup = e => {
 // Toggle state back to form
 document
 	.querySelector('.js-change-location-btn')
-	.addEventListener('click', () => {
+	.addEventListener('click', function() {
 		displayState.toggleState();
 	});
 

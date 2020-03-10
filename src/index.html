@@ -1,116 +1,116 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
-    <title data-head="true">Weather Arpeggiator</title>
-    <meta
-      name="description"
-      content="This is a new project."
-      data-head="true"
-    />
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=no"
+		/>
+		<title data-head="true">Weather Arpeggiator</title>
+		<meta
+			name="description"
+			content="This is a new project."
+			data-head="true"
+		/>
 
-    <!-- Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="css/main.min.css"
-      type="text/css"
-      media="screen"
-    />
+		<!-- Stylesheet -->
+		<link
+			rel="stylesheet"
+			href="css/main.min.css"
+			type="text/css"
+			media="screen"
+		/>
 
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/favicon/favicon.ico"
-    />
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="assets/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="assets/favicon/favicon-16x16.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="assets/favicon/favicon.ico"
+		/>
+		<link rel="manifest" href="assets/favicon/site.webmanifest" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
-      rel="stylesheet"
-    />
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
+			rel="stylesheet"
+		/>
 
-    <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.2.0/Tone.js"></script>
-  </head>
+		<!-- JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.2.0/Tone.js"></script>
+	</head>
 
-  <body class="site">
-    <header class="container site__header header header--hidden">
-      <div
-        class="container__inner-container container__inner-container--split header__content-container"
-      >
-        <button
-          class="button button--icon button__back-btn js-change-location-btn"
-        ></button>
-        <h2 class="header__location-display"></h2>
-        <button
-          class="button button--icon button__mute-btn js-toggle-playing-btn"
-        ></button>
-      </div>
-    </header>
+	<body class="site">
+		<header class="container site__header header header--hidden">
+			<div
+				class="container__inner-container container__inner-container--split header__content-container"
+			>
+				<button
+					class="button button--icon button__back-btn js-change-location-btn"
+				></button>
+				<h2 class="header__location-display"></h2>
+				<button
+					class="button button--icon button__mute-btn js-toggle-playing-btn"
+				></button>
+			</div>
+		</header>
 
-    <main class="site__main container">
-      <div
-        class="container__inner-container location-form js-location-form-container"
-      >
-        <form class="location-form__form js-location-form">
-          <label class="location-form__cta-label js-location-form-label"
-            >Where would you like to hear the weather for?
-          </label>
+		<main class="site__main site--inactive-bg container">
+			<div
+				class="container__inner-container location-form js-location-form-container"
+			>
+				<form class="location-form__form js-location-form">
+					<label class="location-form__cta-label js-location-form-label"
+						>Where would you like to hear the weather for?
+					</label>
 
-          <div class="location-form__form-field-container">
-            <input
-              type="search"
-              class="location-form__text-field js-location-search-field"
-              value=""
-              placeholder="Enter city name"
-            />
-            <input
-              type="submit"
-              class="location-form__submit-btn button js-location-search-submit-btn"
-              value="Submit"
-            />
-          </div>
-        </form>
-      </div>
+					<div class="location-form__form-field-container">
+						<input
+							type="search"
+							class="location-form__text-field js-location-search-field"
+							value=""
+							placeholder="Enter city name"
+						/>
+						<input
+							type="submit"
+							class="location-form__submit-btn button js-location-search-submit-btn"
+							value="Submit"
+						/>
+					</div>
+				</form>
+			</div>
 
-      <div class="container__inner-container beats beats--hidden"></div>
-    </main>
+			<div class="container__inner-container beats beats--hidden"></div>
+		</main>
 
-    <footer class="container site__footer">
-      <div class="container__inner-container container__inner-container--split">
-        <h1>Weather Arpeggiator</h1>
+		<footer class="container site__footer site--inactive-bg">
+			<div class="container__inner-container container__inner-container--split">
+				<h1>Weather Arpeggiator</h1>
 
-        <a href="https://github.com/chrisschnaars/weather-arpeggiator"
-          ><p>Github</p></a
-        >
-      </div>
-    </footer>
+				<a href="https://github.com/chrisschnaars/weather-arpeggiator"
+					><p>Github</p></a
+				>
+			</div>
+		</footer>
 
-    <!-- Scripts -->
-    <script src="js/main.min.js"></script>
-  </body>
+		<!-- Scripts -->
+		<script src="js/main.min.js"></script>
+	</body>
 </html>

@@ -6,14 +6,16 @@ const beatSettings = {
 	maxTemp: null,
 	windSpeed: null,
 	activeBeat: null,
-	toggleBeats() {
-		const b = document.querySelector('.beats');
-		b.classList.toggle('beats--hidden');
+	// Toggle visibility of beats container
+	toggleBeatContainerVisibility() {
+		document.querySelector('.beats').classList.toggle('beats--hidden');
 	},
+	// Set up beat objects and data
 	setupBeats(j) {
 		this.createBeats(j);
 		this.setBeatData(j);
 	},
+	// Create beat DOM elements
 	createBeats(j) {
 		for (let i = 0; i < this.numBeats; i += 1) {
 			// Get temperature
@@ -29,6 +31,7 @@ const beatSettings = {
 			beatSettings.toggleBeatVisibility();
 		}, 50);
 	},
+	// Animate beats into view
 	toggleBeatVisibility() {
 		const b = document.querySelectorAll('.beats__beat');
 
@@ -36,6 +39,7 @@ const beatSettings = {
 			b[i].style.animationDelay = `${i * 0.075}s`;
 		}
 	},
+	// Set beat's data
 	setBeatData(j) {
 		// Set min and max temps for the range
 		this.maxTemp = Math.max(...beatSettings.temps);
@@ -50,10 +54,10 @@ const beatSettings = {
 		this.setBeatPositions();
 		audioSettings.setupAudio();
 	},
+	// Set beat position in DOM
 	setBeatPositions() {
 		const min = 0;
 		const { maxX, maxY } = maxBeatPositions();
-		// const maxY = maxBeatYPosition();
 
 		for (let i = 0; i < this.numBeats; i += 1) {
 			// Convert beat temp to vertical position
@@ -82,6 +86,7 @@ const beatSettings = {
 			}
 		}
 	},
+	// Clear beats from DOM
 	clearBeats() {
 		// Remove beats from DOM
 		const b = document.querySelectorAll('.beats__beat-container');

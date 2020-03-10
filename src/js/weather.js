@@ -10,6 +10,7 @@ const getWeatherData = (lat, lng) => {
 		.then(r => r.json())
 		.then(j => {
 			if (j.list.length > 0) {
+				// If there's data, toggle the display state of the site
 				displayState.toggleState(j);
 			} else {
 				locationForm.toggleResultsError();

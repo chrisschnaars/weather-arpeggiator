@@ -3,11 +3,12 @@ const displayState = {
 	toggleState(j = null) {
 		// Each time state is toggled
 		// Toggle form and header display
-		locationForm.toggleForm();
-		siteHeader.toggleHeader(j);
-		beatSettings.toggleBeats();
+		locationForm.toggleFormVisibility();
+		siteHeader.toggleHeaderVisibility();
+		beatSettings.toggleBeatContainerVisibility();
+		backgroundColors.toggleInactiveStateBackground();
 
-		if (!this.beatsActive) {
+		if (!this.active) {
 			// Reset form
 			locationForm.resetForm();
 
@@ -17,6 +18,9 @@ const displayState = {
 
 			// Set backround color
 			backgroundColors.setBackgroundColor(j);
+
+			// Update header display
+			siteHeader.updateHeaderDislay(j);
 
 			// Toggle status flag
 			this.active = true;

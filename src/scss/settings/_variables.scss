@@ -17,13 +17,8 @@ $color-lightest-gray: lighten($color-black, 85%);
 $color-white: #fff;
 
 // Color
-$color-purple-base: #3b2857;
-$color-yellow-base: #fab709;
-$color-yellow-dark: #d4990d;
-
-$color-background: $color-purple-base;
 $color-text-base: $color-white;
-$color-action: $color-yellow-base;
+$color-action: $color-white;
 
 // Sizing
 $border-size-small: 2px;
@@ -33,15 +28,15 @@ $border-size-large: 4px;
 $base-space-value: 0.5rem;
 
 $space-values: (
-  '0': 0,
-  '1': $base-space-value,
-  '2': $base-space-value * 2,
-  '3': $base-space-value * 3,
-  '4': $base-space-value * 4,
-  '6': $base-space-value * 6,
-  '8': $base-space-value * 8,
-  '12': $base-space-value * 12,
-  '16': $base-space-value * 16,
+	'0': 0,
+	'1': $base-space-value,
+	'2': $base-space-value * 2,
+	'3': $base-space-value * 3,
+	'4': $base-space-value * 4,
+	'6': $base-space-value * 6,
+	'8': $base-space-value * 8,
+	'12': $base-space-value * 12,
+	'16': $base-space-value * 16
 );
 
 $space-0: map-get($space-values, '0');
