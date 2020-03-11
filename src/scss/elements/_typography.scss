@@ -13,7 +13,7 @@ h4,
 h5,
 h6,
 p {
-	color: inherit;
+	color: $color-white;
 	font-size: $font-size-14;
 	font-family: $font-family-heading;
 	font-weight: normal;
@@ -27,13 +27,13 @@ p {
 }
 
 a {
-	border-bottom: $border-size-small solid $color-action;
-	color: inherit;
+	border-bottom: $border-size-small solid $color-white;
+	color: $color-white;
 	text-decoration: none;
 	transition: color $transition-duration-base $transition-timing-base;
 
 	&:focus,
 	&:hover {
-		color: $color-action;
+		border-color: $color-black;
 	}
 }

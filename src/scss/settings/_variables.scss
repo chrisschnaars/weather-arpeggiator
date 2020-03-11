@@ -8,6 +8,7 @@ $font-weight-heavy: 600;
 $font-size-14: 0.875rem;
 $font-size-16: 1rem;
 $font-size-24: 1.5rem;
+$font-size-32: 2rem;
 $font-size-36: 2.25rem;
 
 // Color Palette
@@ -15,11 +16,11 @@ $color-black: #1d1c1c;
 $color-gray: lighten($color-black, 30%);
 $color-lightest-gray: lighten($color-black, 85%);
 $color-white: #fff;
-$color-yellow: #9013fe;
+$color-red: #9013fe;
 
 // Color Settings
 $color-text-base: $color-white;
-$color-action: $color-yellow;
+$color-action: $color-red;
 
 // Sizing
 $border-size-small: 2px;

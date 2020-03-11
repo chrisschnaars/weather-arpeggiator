@@ -6,7 +6,7 @@ const locationForm = {
 	},
 	resetForm() {
 		document.querySelector('.js-location-form-label').innerHTML =
-			'Where would you like to hear the weather for?';
+			'Where do you want to listen to?';
 	},
 	toggleResultsError() {
 		document.querySelector('.js-location-form-label').innerHTML =

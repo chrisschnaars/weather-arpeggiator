@@ -1,5 +1,5 @@
 .site {
-	color: $color-white;
+	background: linear-gradient(35deg, #11557d, #84b9d2);
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -15,9 +15,4 @@
 
 .site__footer {
 	flex: 0 0 auto;
-}
-
-.site--inactive-bg {
-	background-color: rgba(255, 255, 255, 0.85);
-	color: $color-black;
 }

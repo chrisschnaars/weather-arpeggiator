@@ -20,8 +20,8 @@ $_button-icon-height: 2rem;
 
 	&:hover,
 	&:focus {
-		border-color: $color-action;
-		color: $color-action;
+		background-color: $color-black;
+		color: $color-white;
 	}
 
 	@media (min-width: $breakpoint-medium) {
@@ -40,6 +40,7 @@ $_button-icon-height: 2rem;
 	width: $_button-icon-height;
 
 	&:hover {
+		background-color: transparent;
 		letter-spacing: 0;
 		opacity: 0.75;
 	}

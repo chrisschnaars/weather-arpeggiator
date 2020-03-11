@@ -6,7 +6,6 @@ const displayState = {
 		locationForm.toggleFormVisibility();
 		siteHeader.toggleHeaderVisibility();
 		beatSettings.toggleBeatContainerVisibility();
-		backgroundColors.toggleInactiveStateBackground();
 
 		if (!this.active) {
 			// Reset form
