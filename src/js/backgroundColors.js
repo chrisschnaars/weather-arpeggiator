@@ -26,7 +26,6 @@ const backgroundColors = {
 	setBackgroundColor(j) {
 		// Get color condition
 		let timeId = this.getColorCondition(j);
-		timeId = 0;
 
 		// Set background color of beat container
 		const siteContainer = document.querySelector('.site');
