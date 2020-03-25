@@ -103,6 +103,5 @@ const audioSettings = {
 	clearNotes() {
 		this.notes = [];
 		this.pattern.stop();
-		console.log(this.notes);
 	}
 };

@@ -1,27 +1,27 @@
 const backgroundColors = {
 	bgColors: [
-		['#286787', '#9DA1B9', '#FEBD77'], // Sunrise
-		['#81698D', '#C8A2BD', '#E8917F'], // Sunset
-		['#5485EC', '#93D0FE'], // Day, Clear
-		['#626978', '#9CA4B8'], // Day, Cloudy
-		['#5C6289', '#373A4D'], // Night, Clear
-		['#464656', '#14161C'] // Night, Cloudy
+		['#587BAF', '#C7C8E6'], // Sunrise
+		['#81688D', '#A692AF'], // Sunset
+		['#5182EF', '#91CFFF'], // Day, Clear
+		['#626979', '#9CA4B9'], // Day, Cloudy
+		['#373A4E', '#5C618A'], // Night, Clear
+		['#14161C', '#464657'] // Night, Cloudy
 	],
 	orbColors: [
-		['#3384AD', '#FED5A9'], // Sunrise
-		['#9984A4', '#EFB5A9'], // Sunset
-		['#83A7F1', '#C7E7FE'], // Day, Clear
-		['#7B8393', '#BBC0CE'], // Day, Cloudy
-		['#767CA3', '#4C4F6A'], // Night, Clear
-		['#5E5E73', '#282C39'] // Night, Cloudy
+		['#587BAF', '#FFE8DB'], // Sunrise
+		['#81688D', '#F0B5A8'], // Sunset
+		['#5182EF', '#C6E7FF'], // Day, Clear
+		['#626979', '#626979'], // Day, Cloudy
+		['#373A4E', '#4C4F6A'], // Night, Clear
+		['#14161C', '#5E5E74'] // Night, Cloudy
 	],
 	shadowColors: [
-		'200, 54%, 10%', // Sunrise
-		'280, 15%, 10%', // Sunset
-		'220, 80%, 10%', // Day, Clear
-		'220, 10%, 10%', // Day, Cloudy
-		'232, 20%, 10%', // Night, Clear
-		'240, 10%, 10%' // Night, Cloudy
+		'215, 33%, 10%', // Sunrise
+		'283, 14%, 10%', // Sunset
+		'220, 84%, 10%', // Day, Clear
+		'210, 10%, 10%', // Day, Cloudy
+		'233, 18%, 10%', // Night, Clear
+		'227, 18%, 10%' // Night, Cloudy
 	],
 	setBackgroundColor(j) {
 		// Get color condition
@@ -30,11 +30,14 @@ const backgroundColors = {
 		// Set background color of beat container
 		const siteContainer = document.querySelector('.site');
 		const bgGradientString = this.bgColors[timeId].toString();
+
 		// Set direction of background
 		let bgGradientDir = 135;
 		if (timeId < 3) {
 			bgGradientDir = 180;
 		}
+
+		// Set background CSS
 		siteContainer.style.background = `linear-gradient(${bgGradientDir}deg, ${bgGradientString})`;
 
 		// Set bg color of each beat
@@ -54,19 +57,20 @@ const backgroundColors = {
 		}
 	},
 	getColorCondition(j) {
-		console.log(j);
+		// This returns ID of colors in each array to use
+		// Based on current time in searched location
 
 		// Get current time
-		const currentTime = getLocalTime(j);
+		const currentTime =
+			Math.round(new Date().getTime() / 1000) + j.city.timezone;
 
 		// Get sunrise and sunset times at location
-		const sunriseTime = j.city.sunrise;
-		const sunsetTime = j.city.sunset;
+		const sunriseTime = j.city.sunrise + j.city.timezone;
+		const sunsetTime = j.city.sunset + j.city.timezone;
 
 		// Get difference between current time and sunrise and sunset
 		const sunriseDiff = Math.abs(currentTime - sunriseTime);
 		const sunsetDiff = Math.abs(currentTime - sunsetTime);
-		console.log(sunriseDiff, sunsetDiff);
 
 		// Create variable for max difference in current time and sunset/sunrise
 		const timeDiffRange = 3600; // one hour in seconds
@@ -76,7 +80,6 @@ const backgroundColors = {
 
 		// Check if time is within sunrise or sunset range
 		if (sunriseDiff <= timeDiffRange) {
-			console.log;
 			return condition;
 		}
 
@@ -85,35 +88,18 @@ const backgroundColors = {
 			return condition;
 		}
 
-		// Increment condition if time not within sunrise and sunset
-		if (currentTime < sunriseTime || currentTime > sunsetTime) {
+		// Check whether it's night or day
+		if (currentTime > sunriseTime && currentTime < sunsetTime) {
 			condition += 2;
 		} else {
 			condition += 4;
 		}
 
 		// Increment condition if cloudy over 50%
-		if (j.list[0].clouds.all > 50) {
+		if (j.list[0].clouds.all > 60) {
 			condition += 1;
 		}
 
 		return condition;
 	}
-};
-
-// Get local time at entered location
-const getLocalTime = j => {
-	// Find the user's local time
-	let currDate = new Date();
-	let currTime = Math.round(new Date().getTime() / 1000);
-	let currOffset = currDate.getTimezoneOffset() * 60;
-
-	// Calculate the current timestamp
-	let localizedTime = currTime + currOffset + j.city.timezone;
-
-	return localizedTime;
-};
-
-const createGradientString = colors => {
-	return str;
 };
