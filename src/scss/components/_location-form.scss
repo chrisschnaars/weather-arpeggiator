@@ -43,7 +43,7 @@ $_animationDuration: 1s;
 }
 
 .location-form__text-field {
-	border-color: $color-white;
+	border-color: color-form-input-inactive;
 	border-width: 0 0 $border-size-small 0;
 	background-color: transparent;
 	color: $color-white;
@@ -51,10 +51,18 @@ $_animationDuration: 1s;
 	margin: 0 0 $space-4 0;
 	min-width: 0%;
 	padding-bottom: 0.5rem;
+	transition: border-color $transition-duration-base $transition-timing-base;
 	width: 100%;
 
+	&:hover,
 	&:focus {
-		border-color: $color-black;
+		border-color: $color-white;
+	}
+
+	&::placeholder {
+		color: $color-form-input-inactive;
+		line-height: normal;
+		// opacity: 1; /* Firefox */
 	}
 
 	@media (min-width: $breakpoint-small) {
@@ -62,7 +70,6 @@ $_animationDuration: 1s;
 		font-size: $font-size-36;
 		height: 4rem;
 		margin: 0 $space-2 0 0;
-		// padding-bottom: unset;
 	}
 }
 

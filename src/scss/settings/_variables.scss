@@ -16,11 +16,11 @@ $color-black: #1d1c1c;
 $color-gray: lighten($color-black, 30%);
 $color-lightest-gray: lighten($color-black, 85%);
 $color-white: #fff;
-$color-red: #9013fe;
 
 // Color Settings
 $color-text-base: $color-white;
-$color-action: $color-red;
+$color-action: $color-black;
+$color-form-input-inactive: 'rgba(255, 255, 255, 0.55)';
 
 // Sizing
 $border-size-small: 2px;

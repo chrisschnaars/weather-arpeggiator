@@ -77,20 +77,23 @@
 				class="container__inner-container location-form js-location-form-container"
 			>
 				<form class="location-form__form js-location-form">
-					<label class="location-form__cta-label js-location-form-label"
+					<label
+						for="location-input"
+						class="location-form__cta-label js-location-form-label"
 						>Where do you want to listen to?
 					</label>
 
 					<div class="location-form__form-field-container">
 						<input
-							type="search"
 							class="location-form__text-field js-location-search-field"
-							value=""
+							id="location-input"
 							placeholder="Enter city name"
+							type="search"
+							value=""
 						/>
 						<input
-							type="submit"
 							class="location-form__submit-btn button js-location-search-submit-btn"
+							type="submit"
 							value="Go There "
 						/>
 					</div>
