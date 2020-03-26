@@ -43,7 +43,7 @@ $_animationDuration: 1s;
 }
 
 .location-form__text-field {
-	border-color: color-form-input-inactive;
+	border-color: $color-form-input-inactive;
 	border-width: 0 0 $border-size-small 0;
 	background-color: transparent;
 	color: $color-white;

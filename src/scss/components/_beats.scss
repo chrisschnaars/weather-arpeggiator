@@ -4,8 +4,8 @@ $_beat-animation-duration: 0.75s;
 
 .beats {
 	display: flex;
+	flex: 1;
 	flex-direction: column;
-	height: 100%;
 	justify-content: space-between;
 
 	@media (min-width: $breakpoint-medium) {

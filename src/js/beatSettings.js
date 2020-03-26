@@ -59,7 +59,9 @@ const beatSettings = {
 		const min = 0;
 		const { maxX, maxY } = maxBeatPositions();
 
-		for (let i = 0; i < this.numBeats; i += 1) {
+		// Set position of each beat object
+		const b = document.querySelectorAll('.beats__beat');
+		for (let i = 0; i < b.length; i += 1) {
 			// Convert beat temp to vertical position
 			const leftValue = mapNumberToRange(
 				this.temps[i],
@@ -78,11 +80,9 @@ const beatSettings = {
 
 			// Assign CSS value
 			if (window.innerWidth >= 768) {
-				document.querySelectorAll('.beats__beat')[i].style.top = `${topValue}%`;
+				b[i].style.top = `${topValue}%`;
 			} else {
-				document.querySelectorAll('.beats__beat')[
-					i
-				].style.left = `${leftValue}%`;
+				b[i].style.left = `${leftValue}%`;
 			}
 		}
 	},
@@ -103,9 +103,11 @@ const maxBeatPositions = () => {
 	// Get beat height
 	const beatWidth = document.querySelector('.beats__beat').offsetWidth;
 	const beatHeight = document.querySelector('.beats__beat').offsetHeight;
+
 	// Get dimensions of beat container
 	const beatContainerWidth = document.querySelector('.beats').offsetWidth;
 	const beatContainerHeight = document.querySelector('.beats').offsetHeight;
+
 	// Calculate percentage to return as values
 	const max = {
 		maxX: 100 * (1 - beatWidth / beatContainerWidth),

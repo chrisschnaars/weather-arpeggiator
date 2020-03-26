@@ -14,7 +14,9 @@ $_button-icon-height: 2rem;
 	line-height: 1;
 	padding: $space-2 $space-3;
 	text-decoration: none;
-	transition: all $transition-duration-long $transition-timing-base;
+	transition-duration: $transition-duration-base;
+	transition-property: background-color, color;
+	transition-timing-function: $transition-timing-base;
 	vertical-align: middle;
 	white-space: nowrap;
 
