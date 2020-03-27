@@ -1,3 +1,7 @@
+import * as audioSettings from './modules/audioSettings.js';
+import * as beatSettings from './modules/beatSettings.js';
+import * as displayState from './modules/displayState.js';
+
 // Form submission
 document
 	.querySelector('.js-location-form')

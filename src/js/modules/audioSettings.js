@@ -1,4 +1,4 @@
-const audioSettings = {
+export default const audioSettings = {
 	root: null,
 	notes: [],
 	pattern: null,

@@ -1,4 +1,4 @@
-const getCoordinates = loc => {
+export default const getCoordinates = loc => {
 	// Create API call
 	const baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
 	const key = `&key=${API_KEYS.googleMaps}`;

@@ -1,4 +1,4 @@
-const beatSettings = {
+export default const beatSettings = {
 	numBeats: 8,
 	beats: [],
 	temps: [],

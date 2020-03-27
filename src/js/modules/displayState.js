@@ -1,4 +1,4 @@
-const displayState = {
+export default const displayState = {
 	active: false,
 	toggleState(j = null) {
 		// Each time state is toggled
