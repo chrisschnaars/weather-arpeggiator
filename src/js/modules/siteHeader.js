@@ -32,3 +32,5 @@ const titleCase = str => {
 	// Directly return the joined string
 	return splitStr.join(' ');
 };
+
+export { siteHeader };

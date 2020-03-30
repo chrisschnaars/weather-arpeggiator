@@ -103,3 +103,5 @@ const backgroundColors = {
 		return condition;
 	}
 };
+
+export { backgroundColors };

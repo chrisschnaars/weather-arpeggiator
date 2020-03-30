@@ -1,3 +1,5 @@
+import { beatSettings } from './beatSettings';
+
 class Beat {
 	constructor(id, temp) {
 		this.id = id;
@@ -26,3 +28,5 @@ class Beat {
 		beatSettings.activeBeat = this.id;
 	}
 }
+
+export default Beat;

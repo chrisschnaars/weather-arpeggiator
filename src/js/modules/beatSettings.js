@@ -1,4 +1,8 @@
-export default const beatSettings = {
+import Beat from './beat';
+import { mapNumberToRange } from './utils';
+import { audioSettings } from './audioSettings';
+
+const beatSettings = {
 	numBeats: 8,
 	beats: [],
 	temps: [],
@@ -115,3 +119,5 @@ const maxBeatPositions = () => {
 	};
 	return max;
 };
+
+export { beatSettings };

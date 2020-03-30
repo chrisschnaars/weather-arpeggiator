@@ -1,4 +1,8 @@
-export default const audioSettings = {
+import * as Tone from 'tone';
+import { mapNumberToRange } from './utils';
+import { beatSettings } from './beatSettings';
+
+const audioSettings = {
 	root: null,
 	notes: [],
 	pattern: null,
@@ -105,3 +109,5 @@ export default const audioSettings = {
 		this.pattern.stop();
 	}
 };
+
+export { audioSettings };

@@ -1,4 +1,10 @@
-export default const displayState = {
+import { locationForm } from './locationForm';
+import { siteHeader } from './siteHeader';
+import { beatSettings } from './beatSettings';
+import { backgroundColors } from './backgroundColors';
+import { audioSettings } from './audioSettings';
+
+const displayState = {
 	active: false,
 	toggleState(j = null) {
 		// Each time state is toggled
@@ -40,3 +46,5 @@ export default const displayState = {
 		}
 	}
 };
+
+export { displayState };

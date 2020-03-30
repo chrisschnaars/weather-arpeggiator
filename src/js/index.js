@@ -1,6 +1,9 @@
-import * as audioSettings from './modules/audioSettings.js';
-import * as beatSettings from './modules/beatSettings.js';
-import * as displayState from './modules/displayState.js';
+import '../styles/index.scss';
+
+import { getCoordinates } from './modules/location';
+import { audioSettings } from './modules/audioSettings';
+import { beatSettings } from './modules/beatSettings';
+import { displayState } from './modules/displayState';
 
 // Form submission
 document
