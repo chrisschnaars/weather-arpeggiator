@@ -1,3 +1,7 @@
+import * as Tone from 'tone';
+import { mapNumberToRange } from './utils';
+import { beatSettings } from './beatSettings';
+
 const audioSettings = {
 	root: null,
 	notes: [],
@@ -105,3 +109,5 @@ const audioSettings = {
 		this.pattern.stop();
 	}
 };
+
+export { audioSettings };

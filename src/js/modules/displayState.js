@@ -1,3 +1,9 @@
+import { locationForm } from './locationForm';
+import { siteHeader } from './siteHeader';
+import { beatSettings } from './beatSettings';
+import { backgroundColors } from './backgroundColors';
+import { audioSettings } from './audioSettings';
+
 const displayState = {
 	active: false,
 	toggleState(j = null) {
@@ -40,3 +46,5 @@ const displayState = {
 		}
 	}
 };
+
+export { displayState };

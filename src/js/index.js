@@ -1,3 +1,10 @@
+import '../styles/index.scss';
+
+import { getCoordinates } from './modules/location';
+import { audioSettings } from './modules/audioSettings';
+import { beatSettings } from './modules/beatSettings';
+import { displayState } from './modules/displayState';
+
 // Form submission
 document
 	.querySelector('.js-location-form')

@@ -13,3 +13,5 @@ const locationForm = {
 			'No weather data found for your location.&nbsp;<br class="location-form__error-line-break"/>How about trying again?';
 	}
 };
+
+export { locationForm };
