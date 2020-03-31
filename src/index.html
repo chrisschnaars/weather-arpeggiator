@@ -1,108 +1,109 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, user-scalable=no"
-		/>
-		<title data-head="true">Weather Arpeggiator</title>
-		<meta
-			name="description"
-			content="Create tone loops using weather data."
-			data-head="true"
-		/>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title data-head="true">Weather Arpeggiator</title>
+    <meta
+      name="description"
+      content="Create tone loops using weather data."
+      data-head="true"
+    />
 
-		<!-- Favicon -->
-		<!-- <link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="assets/favicon/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="assets/favicon/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="assets/favicon/favicon-16x16.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="assets/favicon/favicon.ico"
-		/>
-		<link rel="manifest" href="assets/favicon/site.webmanifest" /> -->
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon.ico"
+    />
+    <!-- <link rel="manifest" href="./assets/favicon/site.webmanifest" /> -->
 
-		<!-- Google Fonts -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-	<body class="site">
-		<header class="container site__header header header--hidden">
-			<div
-				class="container__inner-container container__inner-container--split header__content-container"
-			>
-				<button
-					class="button button--icon button__back-btn js-change-location-btn"
-				></button>
-				<h2 class="header__location-display"></h2>
-				<button
-					class="button button--icon button__mute-btn js-toggle-playing-btn"
-				></button>
-			</div>
-		</header>
+  <body class="site">
+    <header class="container site__header header header--hidden">
+      <div
+        class="container__inner-container container__inner-container--split header__content-container"
+      >
+        <button
+          class="button button--icon button__back-btn js-change-location-btn"
+        ></button>
+        <h2 class="header__location-display"></h2>
+        <button
+          class="button button--icon button__mute-btn js-toggle-playing-btn"
+        ></button>
+      </div>
+    </header>
 
-		<main class="site__main container">
-			<div
-				class="container__inner-container location-form js-location-form-container"
-			>
-				<form class="location-form__form js-location-form">
-					<label
-						for="location-input"
-						class="location-form__cta-label js-location-form-label"
-						>Where do you want to listen to?
-					</label>
+    <main class="site__main container">
+      <div
+        class="container__inner-container location-form js-location-form-container"
+      >
+        <form class="location-form__form js-location-form">
+          <label
+            for="location-input"
+            class="location-form__cta-label js-location-form-label"
+            >Where do you want to listen to?
+          </label>
 
-					<div class="location-form__form-field-container">
-						<input
-							class="location-form__text-field js-location-search-field"
-							id="location-input"
-							placeholder="Enter city name"
-							type="search"
-							value=""
-						/>
-						<input
-							class="location-form__submit-btn button js-location-search-submit-btn"
-							type="submit"
-							value="Go There "
-						/>
-					</div>
-				</form>
-			</div>
+          <div class="location-form__form-field-container">
+            <input
+              class="location-form__text-field js-location-search-field"
+              id="location-input"
+              placeholder="Enter city name"
+              type="search"
+              value=""
+              autofocus
+            />
+            <input
+              class="location-form__submit-btn button js-location-search-submit-btn"
+              type="submit"
+              value="Go There "
+            />
+          </div>
+        </form>
+      </div>
 
-			<div class="container__inner-container beats beats--hidden"></div>
-		</main>
+      <div class="container__inner-container beats beats--hidden"></div>
+    </main>
 
-		<footer class="container site__footer">
-			<div class="container__inner-container container__inner-container--split">
-				<h1>Weather Arpeggiator</h1>
+    <footer class="container site__footer">
+      <div class="container__inner-container container__inner-container--split">
+        <h1>Weather Arpeggiator</h1>
 
-				<a href="https://github.com/chrisschnaars/weather-arpeggiator"
-					><p>Github</p></a
-				>
-			</div>
-		</footer>
+        <a href="https://github.com/chrisschnaars/weather-arpeggiator"
+          ><p>Github</p></a
+        >
+      </div>
+    </footer>
 
-		<!-- Scripts -->
-		<script src="js/index.js"></script>
-	</body>
+    <!-- Scripts -->
+    <script src="./js/index.js"></script>
+  </body>
 </html>

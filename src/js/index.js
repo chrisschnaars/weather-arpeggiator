@@ -11,6 +11,9 @@ document
 	.addEventListener('submit', function(e) {
 		e.preventDefault();
 
+		// Start audio context on safari
+		audioSettings.synth.context.resume();
+
 		// Use search value to get coordinates and weather data
 		const loc = document.querySelector('.js-location-search-field').value;
 		getCoordinates(loc);
