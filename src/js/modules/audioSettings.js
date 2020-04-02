@@ -40,7 +40,6 @@ const audioSettings = {
       maxRoot
     );
 
-    console.log("root note = " + r);
     return r;
   },
   setNoteArray() {
@@ -53,7 +52,6 @@ const audioSettings = {
         (beatSettings.temps[i] - beatSettings.minTemp) /
         (beatSettings.maxTemp - beatSettings.minTemp);
       this.notes[i] = this.root + this.root * interval;
-      console.log(this.notes[i]);
     }
 
     // When notes are ready, toggle playing
