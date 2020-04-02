@@ -1,19 +1,19 @@
 .site {
-	background: linear-gradient(180deg, #14161c, #464657);
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  background: linear-gradient(180deg, #14161c, #464657);
+  display: flex;
+  flex-direction: column;
+  // min-height: 100vh;
 }
 
 .site__header {
-	flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .site__main {
-	display: flex;
-	flex: 1 1 auto;
+  display: flex;
+  flex: 1 1 auto;
 }
 
 .site__footer {
-	flex: 0 0 auto;
+  flex: 0 0 auto;
 }

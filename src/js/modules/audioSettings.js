@@ -26,9 +26,9 @@ const audioSettings = {
   },
   setRootNote() {
     // Define range limits for temp and root
-    const minTempLevel = -20;
+    const minTempLevel = -50;
     const maxTempLevel = 150;
-    const minRoot = 220;
+    const minRoot = 150;
     const maxRoot = 540;
 
     // Set root note based on min temp
@@ -40,18 +40,20 @@ const audioSettings = {
       maxRoot
     );
 
+    console.log("root note = " + r);
     return r;
   },
   setNoteArray() {
     // Set root note based on min temp
     this.root = this.setRootNote();
 
-    // Create tone array
+    // Each beat's note is based on its ratio within mix/max temp range
     for (let i = 0; i < beatSettings.numBeats; i++) {
-      const interval = beatSettings.temps[i] / beatSettings.temps[0];
-
-      // Create note by multipling interval and root
-      this.notes[i] = interval * this.root;
+      const interval =
+        (beatSettings.temps[i] - beatSettings.minTemp) /
+        (beatSettings.maxTemp - beatSettings.minTemp);
+      this.notes[i] = this.root + this.root * interval;
+      console.log(this.notes[i]);
     }
 
     // When notes are ready, toggle playing

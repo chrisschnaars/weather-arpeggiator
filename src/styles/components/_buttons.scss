@@ -1,61 +1,62 @@
 $_button-icon-height: 2rem;
 
 .button {
-	background-color: rgba(255, 255, 255, 0.1);
-	border-color: $color-white;
-	border-radius: 0;
-	border-style: solid;
-	border-width: $border-size-small;
-	color: $color-white;
-	cursor: pointer;
-	font-family: $font-family-body;
-	font-weight: $font-weight-heavy;
-	letter-spacing: 0.75px;
-	line-height: 1;
-	padding: $space-2 $space-3;
-	text-decoration: none;
-	transition-duration: $transition-duration-base;
-	transition-property: background-color, color;
-	transition-timing-function: $transition-timing-base;
-	vertical-align: middle;
-	white-space: nowrap;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: $color-white;
+  border-radius: 0;
+  border-style: solid;
+  border-width: $border-size-small;
+  color: $color-white;
+  cursor: pointer;
+  font-family: $font-family-body;
+  font-weight: $font-weight-heavy;
+  letter-spacing: 0.75px;
+  line-height: 1;
+  padding: $space-2 $space-3;
+  text-decoration: none;
+  transition-duration: $transition-duration-base;
+  transition-property: background-color, color;
+  transition-timing-function: $transition-timing-base;
+  vertical-align: middle;
+  white-space: nowrap;
 
-	&:hover,
-	&:focus {
-		background-color: $color-white;
-		color: $color-black;
-	}
+  &:hover,
+  &:focus {
+    -webkit-appearance: none;
+    background-color: $color-white;
+    color: $color-black;
+  }
 
-	@media (min-width: $breakpoint-medium) {
-		border-width: $border-size-large;
-	}
+  @media (min-width: $breakpoint-medium) {
+    border-width: $border-size-large;
+  }
 }
 
 .button--icon {
-	background-color: transparent;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	border: none;
-	height: $_button-icon-height;
-	padding: 0;
-	width: $_button-icon-height;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: none;
+  height: $_button-icon-height;
+  padding: 0;
+  width: $_button-icon-height;
 
-	&:hover {
-		background-color: transparent;
-		letter-spacing: 0;
-		opacity: 0.75;
-	}
+  &:hover {
+    background-color: transparent;
+    letter-spacing: 0;
+    opacity: 0.75;
+  }
 }
 
 .button__back-btn {
-	background-image: url(../assets/icons/icon_back-arrow.svg);
+  background-image: url(../assets/icons/icon_back-arrow.svg);
 }
 
 .button__mute-btn {
-	background-image: url(../assets/icons/icon_volume-off.svg);
+  background-image: url(../assets/icons/icon_volume-off.svg);
 }
 
 .button__unmute-btn {
-	background-image: url(../assets/icons/icon_volume-on.svg);
+  background-image: url(../assets/icons/icon_volume-on.svg);
 }
