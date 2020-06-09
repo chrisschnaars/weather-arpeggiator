@@ -1,7 +1,7 @@
 @mixin padding {
-  padding: $space-2;
+    padding: $space-2;
 
-  @media (min-width: $breakpoint-medium) {
-    padding: $space-3;
-  }
+    @media (min-width: $breakpoint-medium) {
+        padding: $space-3;
+    }
 }

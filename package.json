@@ -1,47 +1,48 @@
 {
-  "name": "weather-arpeggiator",
-  "version": "0.0.1",
-  "description": "Beat arpeggiator that uses weather data to create tones.",
-  "main": "index.html",
-  "author": {
-    "name": "Chris Schnaars",
-    "url": "https://schnaars.xyz"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chrisschnaars/weather-arpeggiator"
-  },
-  "boilerplate": {
+    "name": "weather-arpeggiator",
     "version": "0.0.1",
-    "author": "Chris Schnaarws",
-    "url": "https://chrisschnaars.com",
-    "repo": "https://github.com/chrisschnaars/web-project-starter"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "> 0.25%"
-  ],
-  "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "autoprefixer": "^9.8.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "parcel-bundler": "^1.12.4",
-    "postcss-modules": "^1.5.0",
-    "sass": "^1.26.8",
-    "stylelint": "^13.6.0",
-    "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-scss": "^3.17.2",
-    "surge": "^0.21.3"
-  },
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "tone": "^13.8.25"
-  },
-  "scripts": {
-    "dev": "parcel src/index.html --no-cache",
-    "build": "parcel build src/index.html ‑‑no‑source-maps --no-cache --out-dir prod --public-url ./"
-  }
+    "description": "Beat arpeggiator that uses weather data to create tones.",
+    "main": "index.html",
+    "author": {
+        "name": "Chris Schnaars",
+        "url": "https://schnaars.xyz"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chrisschnaars/weather-arpeggiator"
+    },
+    "boilerplate": {
+        "version": "0.0.1",
+        "author": "Chris Schnaarws",
+        "url": "https://chrisschnaars.com",
+        "repo": "https://github.com/chrisschnaars/web-project-starter"
+    },
+    "browserslist": [
+        "last 2 versions",
+        "> 0.25%"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.10.2",
+        "@babel/preset-env": "^7.10.2",
+        "autoprefixer": "^9.8.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^6.8.0",
+        "parcel-bundler": "^1.12.4",
+        "postcss-modules": "^1.5.0",
+        "prettier": "2.0.5",
+        "sass": "^1.26.8",
+        "stylelint": "^13.6.0",
+        "stylelint-config-recommended-scss": "^4.2.0",
+        "stylelint-scss": "^3.17.2",
+        "surge": "^0.21.3"
+    },
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "tone": "^13.8.25"
+    },
+    "scripts": {
+        "dev": "parcel src/index.html --no-cache",
+        "build": "parcel build src/index.html ‑‑no‑source-maps --no-cache --out-dir prod --public-url ./"
+    }
 }

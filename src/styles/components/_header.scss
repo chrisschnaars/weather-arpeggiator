@@ -1,27 +1,27 @@
 .header--hidden {
-  display: none;
+    display: none;
 }
 
 .header__content-container {
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 
 .header--active {
-  animation: 1s animateIn;
+    animation: 1s animateIn;
 }
 
 .header__location-display {
-  flex: 1;
-  font-size: $font-size-16;
-  line-height: 1.5;
-  margin: 0 1.5rem;
-  text-align: center;
+    flex: 1;
+    font-size: $font-size-16;
+    line-height: 1.5;
+    margin: 0 1.5rem;
+    text-align: center;
 
-  @media (min-width: $breakpoint-medium) {
-    font-size: $font-size-24;
-    line-height: 1.33333;
-  }
+    @media (min-width: $breakpoint-medium) {
+        font-size: $font-size-24;
+        line-height: 1.33333;
+    }
 }

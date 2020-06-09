@@ -1,13 +1,13 @@
 .container {
-  @include padding;
-  width: 100%;
+    @include padding;
+    width: 100%;
 }
 
 .container__inner-container {
-  width: 100%;
+    width: 100%;
 }
 
 .container__inner-container--split {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,4 +1,4 @@
 {
-	"extends": "stylelint-config-recommended-scss",
-	"defaultSeverity": "warning"
+    "extends": "stylelint-config-recommended-scss",
+    "defaultSeverity": "warning"
 }
