@@ -2,6 +2,14 @@
 
 A tone arpeggiator that uses the weather data of a location to define the sound sequences, effects, and tempo.
 
+## Installation
+
+Clone the repo and run npm install.
+
+This app uses Parcel for bundling files and assets. To start your dev server, run npm run dev. To build for production, run npm run build.
+
+To successfully run a local build, you will need to get API keys for both [Google Maps](https://developers.google.com/maps/documentation) and [Open Weather Maps](https://openweathermap.org/).
+
 ## Interesting Bits
 
 ### Tones Generation
