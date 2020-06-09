@@ -3,32 +3,32 @@ const backgroundColors = {
     ["#587BAF", "#C7C8E6"], // Sunrise
     ["#81688D", "#A692AF"], // Sunset
     ["#5182EF", "#91CFFF"], // Day, Clear
-    ["#626979", "#9CA4B9"], // Day, Cloudy
-    ["#373A4E", "#5C618A"], // Night, Clear
+    ["#71828E", "#8AAAAD"], // Day, Cloudy
+    ["#653A96", "#8F6DB1"], // Night, Clear
     ["#14161C", "#464657"] // Night, Cloudy
   ],
   orbColors: [
     ["#587BAF", "#FFE8DB"], // Sunrise
     ["#81688D", "#F0B5A8"], // Sunset
     ["#5182EF", "#C6E7FF"], // Day, Clear
-    ["#626979", "#9DA4B9"], // Day, Cloudy
-    ["#373A4E", "#4C4F6A"], // Night, Clear
+    ["#71828E", "#A8C0C2"], // Day, Cloudy
+    ["#653A96", "#A88DC2"], // Night, Clear
     ["#14161C", "#5E5E74"] // Night, Cloudy
   ],
   shadowColors: [
     "215, 33%, 10%", // Sunrise
     "283, 14%, 10%", // Sunset
     "220, 84%, 10%", // Day, Clear
-    "210, 10%, 10%", // Day, Cloudy
-    "233, 18%, 10%", // Night, Clear
+    "205, 11%, 10%", // Day, Cloudy
+    "268, 44%, 10%", // Night, Clear
     "227, 18%, 10%" // Night, Cloudy
   ],
   setBackgroundColor(j) {
     // Get color condition
-    let timeId = this.getColorCondition(j);
+    const timeId = this.getColorCondition(j);
 
     // Set background color of beat container
-    const siteContainer = document.querySelector(".site");
+    const siteContainer = document.querySelector(".background");
     const bgGradientString = this.bgColors[timeId].toString();
 
     // Set direction of background
@@ -46,7 +46,7 @@ const backgroundColors = {
 
     for (let i = 0; i < beats.length; i++) {
       // Use wind direction of each beat as angle of gradient
-      let dir = j.list[i].wind.deg;
+      const dir = j.list[i].wind.deg;
 
       beats[
         i
