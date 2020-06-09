@@ -88,16 +88,12 @@ const audioSettings = {
         Tone.Transport.toggle();
         this.playing = !this.playing;
     },
-    updatePlayToggle() {
-        const btn = document.querySelector('.js-toggle-playing-btn');
+    updateMuteToggle() {
+        const buttons = document.querySelectorAll('.mute-button');
 
-        if (audioSettings.playing) {
-            btn.classList.remove('button__mute-btn');
-            btn.classList.add('button__unmute-btn');
-        } else {
-            btn.classList.add('button__mute-btn');
-            btn.classList.remove('button__unmute-btn');
-        }
+        buttons.forEach((button) => {
+            button.classList.toggle('mute-button--hidden');
+        });
     },
     clearNotes() {
         this.notes = [];

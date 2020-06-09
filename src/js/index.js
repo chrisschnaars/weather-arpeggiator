@@ -21,7 +21,7 @@ document.querySelector('.js-location-form').addEventListener('submit', function 
 document.querySelector('.js-toggle-playing-btn').addEventListener(
     'click',
     function () {
-        audioSettings.updatePlayToggle();
+        audioSettings.updateMuteToggle();
         audioSettings.togglePlaying();
     },
     false
@@ -31,7 +31,7 @@ document.querySelector('.js-toggle-playing-btn').addEventListener(
 document.body.onkeyup = function (e) {
     if (displayState.active) {
         if (e.keyCode === 32) {
-            audioSettings.updatePlayToggle();
+            audioSettings.updateMuteToggle();
             audioSettings.togglePlaying();
         }
     }
