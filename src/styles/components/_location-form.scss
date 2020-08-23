@@ -60,6 +60,7 @@ $_animationDuration: 1s;
     &:focus {
         border-radius: inherit;
         border-color: $color-white;
+        outline: none;
     }
 
     &::placeholder {
