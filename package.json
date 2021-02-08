@@ -25,7 +25,7 @@
     "devDependencies": {
         "@babel/core": "^7.12.13",
         "@babel/preset-env": "^7.12.13",
-        "autoprefixer": "^10.2.4",
+        "autoprefixer": "^9.0.0",
         "babel-eslint": "^10.1.0",
         "eslint": "^7.19.0",
         "parcel-bundler": "^1.12.4",
@@ -40,7 +40,7 @@
     "dependencies": {
         "acorn": "^8.0.5",
         "dotenv": "^8.2.0",
-        "tone": "^14.7.77"
+        "tone": "^13.8.25"
     },
     "resolutions": {
         "node-forge": "0.10.0"

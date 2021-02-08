@@ -29,10 +29,11 @@ a {
     border-bottom: $border-size-small solid $color-white;
     color: $color-white;
     text-decoration: none;
-    transition: color $transition-duration-base $transition-timing-base;
+    transition: all $transition-duration-base $transition-timing-base;
 
     &:focus,
     &:hover {
-        border-color: $color-black;
+        opacity: 0.8;
+        transform: translateY(-4px);
     }
 }
