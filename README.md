@@ -4,9 +4,9 @@ A tone arpeggiator that uses the weather data of a location to define the sound 
 
 ## Installation
 
-Clone the repo and run npm install.
+Clone the repo and run `npm install`.
 
-This app uses Parcel for bundling files and assets. To start your dev server, run npm run dev. To build for production, run npm run build.
+This app uses Parcel for bundling files and assets. To start your dev server, run `npm run dev`. To build for production, run `npm run build`.
 
 To successfully run a local build, you will need to get API keys for both [Google Maps](https://developers.google.com/maps/documentation) and [Open Weather Maps](https://openweathermap.org/).
 
