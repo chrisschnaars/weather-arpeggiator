@@ -4,7 +4,7 @@ import { getWeatherData } from './weather';
 const getCoordinates = (loc) => {
     // Create API call
     const baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-    const key = `&key=${process.env.GOOGLEMAPS_API_KEY}`;
+    const key = `&key=${GOOGLEMAPS_API_KEY}`;
     const url = `${baseUrl}${loc}${key}`;
 
     fetch(url)

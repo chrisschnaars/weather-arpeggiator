@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e3237887-f384-4f66-90fc-3dcba3a4e9c4/deploy-status)](https://app.netlify.com/sites/epic-wescoff-d8c1e6/deploys)
+
 # Weather Arpeggiator
 
 A tone arpeggiator that uses the weather data of a location to define the sound sequences, effects, and tempo.
