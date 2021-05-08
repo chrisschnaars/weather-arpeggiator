@@ -26,9 +26,7 @@ p {
 }
 
 a {
-    border-bottom: $border-size-small solid $color-white;
     color: $color-white;
-    text-decoration: none;
     transition: all $transition-duration-base $transition-timing-base;
 
     &:focus,
