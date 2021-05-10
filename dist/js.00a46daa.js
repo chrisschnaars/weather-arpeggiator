@@ -738,7 +738,7 @@ var _locationForm = require("./locationForm");
 var _displayState = require("./displayState");
 
 var getWeatherData = function getWeatherData(lat, lng) {
-  var baseUrl = 'https://api.openweathermap.org/data/2.5/forecast?';
+  var baseUrl = "https://api.openweathermap.org/data/2.5/forecast?";
   var coords = "lat=".concat(lat, "&lon=").concat(lng);
   var units = '&units=imperial';
   var weatherKey = "&appid=".concat("54352b0dcabe57572744b22fd3043777");
@@ -767,11 +767,12 @@ var _locationForm = require("./locationForm");
 
 var _weather = require("./weather");
 
-var getCoordinates = function getCoordinates(loc) {
+var getCoordinates = function getCoordinates(location) {
   // Create API call
-  var baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+  var baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?";
+  var params = "address=".concat(location);
   var key = "&key=".concat("AIzaSyBANFz3dZldaqxIUs0XjSxITT72Wo8BhhE");
-  var url = "".concat(baseUrl).concat(loc).concat(key);
+  var url = "".concat(baseUrl).concat(params).concat(key);
   fetch(url).then(function (r) {
     return r.json();
   }).then(function (j) {
@@ -865,7 +866,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59889" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62789" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

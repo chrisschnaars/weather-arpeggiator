@@ -1,5 +1,5 @@
 # BUILD FILES
-/prod
+/dist
 .cache/
 
 # ADMIN FILES
@@ -49,3 +49,6 @@ apiKeys.js
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Local Netlify folder
+.netlify

@@ -1,11 +1,12 @@
 import { locationForm } from './locationForm';
 import { getWeatherData } from './weather';
 
-const getCoordinates = (loc) => {
+const getCoordinates = (location) => {
     // Create API call
-    const baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
-    const key = `&key=${GOOGLEMAPS_API_KEY}`;
-    const url = `${baseUrl}${loc}${key}`;
+    const baseUrl = `https://maps.googleapis.com/maps/api/geocode/json?`;
+    const params = `address=${location}`
+    const key = `&key=${process.env.GOOGLEMAPS_TOKEN}`;
+    const url = `${baseUrl}${params}${key}`;
 
     fetch(url)
         .then((r) => r.json())

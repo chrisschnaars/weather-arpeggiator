@@ -12,7 +12,7 @@ This app uses Parcel for bundling files and assets. To start your dev server, ru
 
 To successfully run a local build, you will need to get API keys for both [Google Maps](https://developers.google.com/maps/documentation) and [Open Weather Maps](https://openweathermap.org/).
 
-## Interesting Bits
+## How It Works
 
 ### Tones Generation
 
