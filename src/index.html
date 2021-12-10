@@ -21,7 +21,7 @@
             <div
                 class="container__inner-container container__inner-container--split header__content-container"
             >
-                <button class="button button--round button--lowkey js-change-location-btn">
+                <button aria-label="Search new location" class="button button--round button--lowkey js-change-location-btn">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="button__icon"
@@ -36,7 +36,7 @@
                     </svg>
                 </button>
                 <h2 class="header__location-display"></h2>
-                <button class="button button--round button--lowkey js-toggle-playing-btn">
+                <button aria-label="Toggle playback on and off"  class="button button--round button--lowkey js-toggle-playing-btn">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="button__icon mute-button"
@@ -82,6 +82,7 @@
                             class="location-form__text-field js-location-search-field"
                             id="location-input"
                             placeholder="Enter city name"
+                            aria-label="Enter city name"
                             type="search"
                             value=""
                             autofocus
@@ -102,7 +103,7 @@
             <div class="container__inner-container container__inner-container--split">
                 <h1>Weather Arpeggiator</h1>
 
-                <a href="https://github.com/chrisschnaars/weather-arpeggiator" target="_blank"><p>Github</p></a>
+                <a class="button button--lowkey" href="https://github.com/chrisschnaars/weather-arpeggiator" target="_blank"><p>Github</p></a>
             </div>
         </footer>
 
