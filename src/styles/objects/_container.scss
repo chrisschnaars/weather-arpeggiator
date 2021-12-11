@@ -7,7 +7,14 @@
     width: 100%;
 }
 
-.container__inner-container--split {
+.container__inner-small{
+    margin: 0 auto;
+    max-width: 820px;
+    width: 100%;
+}
+
+.container__inner--split {
+    align-items: center; 
     display: flex;
     justify-content: space-between;
 }

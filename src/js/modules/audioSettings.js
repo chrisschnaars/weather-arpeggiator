@@ -51,7 +51,9 @@ const audioSettings = {
             const interval =
                 (beatSettings.temps[i] - beatSettings.minTemp) /
                 (beatSettings.maxTemp - beatSettings.minTemp);
-            this.notes[i] = this.root + this.root * interval;
+            const note = this.root + this.root * interval;
+
+            this.notes[i] = i === 0 ? [note, note/2, note/3, note/4] : [note, note/3];
         }
 
         // When notes are ready, toggle playing

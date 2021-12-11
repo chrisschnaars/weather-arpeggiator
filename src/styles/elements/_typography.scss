@@ -27,11 +27,11 @@ p {
 
 a {
     color: $color-white;
+    text-decoration: underline;
+    text-underline-offset: 1px;
     transition: all $transition-duration-base $transition-timing-base;
 
-    &:focus,
     &:hover {
-        opacity: 0.8;
-        transform: translateY(-4px);
+        text-decoration: none;
     }
 }

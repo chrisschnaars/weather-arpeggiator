@@ -19,9 +19,9 @@
     <body class="site background">
         <header class="container site__header header header--hidden">
             <div
-                class="container__inner-container container__inner-container--split header__content-container"
+                class="container__inner container__inner--split header__content-container"
             >
-                <button class="button button--round button--lowkey js-change-location-btn">
+                <button aria-label="Search new location" class="button button--round button--lowkey js-change-location-btn">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="button__icon"
@@ -36,7 +36,7 @@
                     </svg>
                 </button>
                 <h2 class="header__location-display"></h2>
-                <button class="button button--round button--lowkey js-toggle-playing-btn">
+                <button aria-label="Toggle playback on and off"  class="button button--round button--lowkey js-toggle-playing-btn">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="button__icon mute-button"
@@ -69,7 +69,7 @@
         </header>
 
         <main class="site__main container">
-            <div class="container__inner-container location-form js-location-form-container">
+            <div class="container__inner-small location-form js-location-form-container">
                 <form class="location-form__form js-location-form">
                     <label
                         for="location-input"
@@ -82,6 +82,7 @@
                             class="location-form__text-field js-location-search-field"
                             id="location-input"
                             placeholder="Enter city name"
+                            aria-label="Enter city name"
                             type="search"
                             value=""
                             autofocus
@@ -93,16 +94,34 @@
                         />
                     </div>
                 </form>
+                <div class="location-form__suggestions">
+                  Fun ones:&nbsp;
+                  <button class="button button--lowkey js-suggestion-btn" value="Moscow, Russia">
+                      Moscow
+                  </button>
+                  <button class="button button--lowkey js-suggestion-btn" value="Kuwait">
+                      Kuwait
+                  </button>
+                  <button class="button button--lowkey js-suggestion-btn" value="Fairbanks, Alaska">
+                      Fairbanks
+                  </button>
+                  <button class="button button--lowkey js-suggestion-btn" value="Wellington, New Zealand">
+                      Wellington
+                  </button>
+                  <button class="button button--lowkey js-suggestion-btn" value="Patagonia, Chile">
+                      Patagonia
+                  </button>
+                </div>
             </div>
 
             <div class="container__inner-container beats beats--hidden"></div>
         </main>
 
         <footer class="container site__footer">
-            <div class="container__inner-container container__inner-container--split">
+            <div class="container__inner container__inner--split">
                 <h1>Weather Arpeggiator</h1>
 
-                <a href="https://github.com/chrisschnaars/weather-arpeggiator" target="_blank"><p>Github</p></a>
+                <a class="button button--lowkey" href="https://github.com/chrisschnaars/weather-arpeggiator" target="_blank"><p>Github</p></a>
             </div>
         </footer>
 

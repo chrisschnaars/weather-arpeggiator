@@ -3,7 +3,7 @@ $_button-icon-size: 3rem;
 .button {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: $color-white;
-    border-radius: 0;
+    border-radius: 4px;
     border-style: solid;
     border-width: $border-size-small;
     color: $color-white;
@@ -13,33 +13,33 @@ $_button-icon-size: 3rem;
     letter-spacing: 0.75px;
     line-height: 1;
     padding: $space-2 $space-3;
-    text-decoration: none;
     transition-duration: $transition-duration-base;
     transition-property: background-color, color;
     transition-timing-function: $transition-timing-base;
     vertical-align: middle;
     white-space: nowrap;
 
-    &:hover,
-    &:focus {
+    &:hover {
         -webkit-appearance: none;
         background-color: $color-white;
         color: $color-black;
     }
 
-    @media (min-width: $breakpoint-medium) {
-        border-width: $border-size-large;
+    &:focus-visible {
+      outline: none;
+      box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 0px 2px, rgb(255,255,255) 0px 0px 0px 1px !important;
     }
 }
 
 .button--lowkey {
     background-color: transparent;
-    border: none;
+    border-color: transparent;
+    color: $color-text-secondary;
     padding: $space-1;
 
-    &:hover,
-    &:focus {
-        background-color: rgba(255, 255, 255, 0.1);
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: $color-white;
     }
 
     &:active {
