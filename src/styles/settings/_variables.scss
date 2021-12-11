@@ -12,19 +12,16 @@ $font-size-32: 2rem;
 $font-size-36: 2.25rem;
 
 // Color Palette
-$color-black: #1d1c1c;
-$color-gray: lighten($color-black, 30%);
-$color-lightest-gray: lighten($color-black, 85%);
+$color-black: #171923;
+$color-gray-300: #CBD5E0;
 $color-white: #fff;
 
-// Color Settings
+// Text Color Settings
 $color-text-base: $color-white;
-$color-action: $color-black;
-$color-form-input-inactive: rgba(255, 255, 255, 0.55);
+$color-text-secondary: $color-gray-300;
 
 // Sizing
 $border-size-small: 2px;
-$border-size-large: 4px;
 
 // Spacing
 $base-space-value: 0.5rem;

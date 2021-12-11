@@ -5,6 +5,7 @@ $_animationDuration: 1s;
 }
 
 .location-form__form {
+    animation: $_animationDuration ease 0.15s backwards animateIn;
     display: block;
     flex-flow: column nowrap;
     margin: 12vh auto 0;
@@ -12,7 +13,6 @@ $_animationDuration: 1s;
 }
 
 .location-form__cta-label {
-    animation: $_animationDuration ease 0.15s backwards animateIn;
     color: $color-white;
     font-size: $font-size-32;
     line-height: 1.5;
@@ -33,7 +33,6 @@ $_animationDuration: 1s;
 }
 
 .location-form__form-field-container {
-    animation: $_animationDuration ease 0.2s backwards animateIn;
     display: flex;
     flex-direction: column;
 
@@ -45,7 +44,7 @@ $_animationDuration: 1s;
 .location-form__text-field {
     appearance: none;
     border-radius: 0;
-    border-color: $color-form-input-inactive;
+    border-color: $color-text-secondary;
     border-width: 0 0 $border-size-small 0;
     background-color: transparent;
     color: $color-white;
@@ -64,12 +63,11 @@ $_animationDuration: 1s;
     }
 
     &::placeholder {
-        color: $color-form-input-inactive;
+        color: $color-text-secondary;
         line-height: normal;
     }
 
     @media (min-width: $breakpoint-small) {
-        border-width: 0 0 $border-size-large 0;
         font-size: $font-size-36;
         height: 4rem;
         margin: 0 $space-2 0 0;
@@ -77,6 +75,7 @@ $_animationDuration: 1s;
 }
 
 .location-form__suggestions {
+  animation: $_animationDuration ease 0.2s backwards animateIn;
   align-items: center;
   color: $color-white;
   display: flex;

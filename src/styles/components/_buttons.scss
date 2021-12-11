@@ -34,6 +34,7 @@ $_button-icon-size: 3rem;
 .button--lowkey {
     background-color: transparent;
     border-color: transparent;
+    color: $color-text-secondary;
     padding: $space-1;
 
     &:hover {
