@@ -8,7 +8,7 @@ $_animationDuration: 1s;
     display: block;
     flex-flow: column nowrap;
     margin: 12vh auto 0;
-    max-width: 820px;
+
 }
 
 .location-form__cta-label {
@@ -74,6 +74,14 @@ $_animationDuration: 1s;
         height: 4rem;
         margin: 0 $space-2 0 0;
     }
+}
+
+.location-form__suggestions {
+  align-items: center;
+  color: $color-white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: $space-4 0;
 }
 
 @keyframes animateIn {

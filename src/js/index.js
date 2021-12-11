@@ -17,6 +17,14 @@ document.querySelector('.js-location-form').addEventListener('submit', function 
     getCoordinates(loc);
 });
 
+// Suggestion Button
+const suggestionsButtons = document.querySelectorAll('.js-suggestion-btn')
+for (let i = 0; i < suggestionsButtons.length; i++) {
+  suggestionsButtons[i].addEventListener('click', function (e) {
+      getCoordinates(e.target.value);
+  });
+}
+
 // Play/pause toggle
 document.querySelector('.js-toggle-playing-btn').addEventListener(
     'click',
