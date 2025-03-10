@@ -9,7 +9,7 @@ class Beat {
     // FIXME: should these methods be in beat settings?
     createDomElement() {
         // Beat markup
-        const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}</p></div></div>`;
+        const markup = `<div class="beats__beat-container"><div class="beats__beat"><p class="beats__beat-reading">${this.temp}°</p></div></div>`;
 
         // Add markup to beat container
         document.querySelector('.beats').innerHTML += markup;
