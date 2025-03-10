@@ -6,7 +6,7 @@ import { audioSettings } from './audioSettings';
 
 const displayState = {
   active: false,
-  toggleState(j = null) {
+  toggleState(j = null, location) {
     // Each time state is toggled
     // Toggle form and header display
     locationForm.toggleFormVisibility();
@@ -19,14 +19,13 @@ const displayState = {
 
       // Setup beat objects and data
       document.querySelector('.js-location-form').reset();
-      console.log(j);
       beatSettings.setupBeats(j);
 
       // Set backround color
       backgroundColors.setBackgroundColor(j);
 
       // Update header display
-      siteHeader.updateHeaderDislay(j);
+      siteHeader.updateHeaderDislay(j, location);
 
       // Toggle status flag
       this.active = true;
